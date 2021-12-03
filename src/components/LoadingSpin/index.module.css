@@ -1,0 +1,7 @@
+.loadingSpinRow {
+    min-height: 100vh;
+}
+
+.spin {
+    transform: scale(200%);
+}

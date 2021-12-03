@@ -1,0 +1,63 @@
+import styles from './index.module.css';
+import { Carousel, Col, Layout, Menu, Row } from 'antd';
+
+export default function Home() {
+  const { Header, Footer, Content } = Layout;
+
+  return (
+    <Layout>
+      <Header className={styles.header}>
+        <Row>
+          <Col className={styles.logo}></Col>
+          <Col span={20}>
+            <Menu className={styles.menu} theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+              <Menu.Item title="Votlar ao inicio" key={1}>
+                <a href="/">Home</a>
+              </Menu.Item>
+              <Menu.Item title="JavaScript Explorer PlayGround" key={2}>
+                <a
+                  href="https://jep.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >JEP</a>
+              </Menu.Item>
+              <Menu.Item title="Meu Blog" key={3}>
+                <a
+                  href="https://giuzambot.blogspot.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >Blog</a>
+              </Menu.Item>
+              <Menu.Item title="GitHub" key={3}>
+                <a
+                  href="https://github.com/giuzambot"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >Blog</a>
+              </Menu.Item>
+              <Menu.Item title="LinkedIn" key={3}>
+                <a
+                  href="https://www.linkedin.com/in/giuzambot/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >LinkedIn</a>
+              </Menu.Item>
+            </Menu>
+          </Col>
+        </Row>
+      </Header>
+
+      <Content className={styles.content}>
+        <Carousel autoplay className={styles.carousel}>
+          <div className={styles.carousel1}> 1</div>
+          <div className={styles.carousel2}> 2</div>
+          <div className={styles.carousel3}> 3</div>
+          <div className={styles.carousel4}> 4</div>
+        </Carousel>
+
+      </Content>
+      <Footer className={styles.footer}>Giu Zambot ©2021</Footer>
+    </Layout>
+
+  );
+}

@@ -1,0 +1,62 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 7%;
+    background-image: url('../../assets/home/giu_zambot_logo.png') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.header {
+    margin: 0;
+    padding: 0; 
+    height: fit-content;
+}
+
+.menu {
+    font-size: 100%;
+}
+
+.content {
+    background-color: var(--back_color);
+ }
+
+ .carousel div {
+    height: 40vw;
+    color: #fff;
+    line-height: 160px;
+    text-align: center;
+    background: #364d79;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+
+.carousel div.carousel1 {
+    background-color: #fff;
+    background-image: url('../../assets/home/saudacao.png') ;
+}
+
+.carousel div.carousel2 {
+    background-image: url('../../assets/home/react.png') ;
+}
+
+.carousel div.carousel3 {
+    background-image: url('../../assets/home/flutter.png') ;
+}
+
+.carousel div.carousel4 {
+    background-image: url('../../assets/home/back.png') ;
+ }
+
+ .footer {
+    color:var(--primary_color);
+    background-color: var(--back_color);
+    text-align: center;
+    font-size: 100%;
+ }
