@@ -28,28 +28,28 @@ export default function Home() {
                   rel="noreferrer noopener"
                 >Blog</a>
               </Menu.Item>
-              <Menu.Item title="GitHub" key={3}>
+              <Menu.Item title="GitHub" key={4}>
                 <a
                   href="https://github.com/giuzambot"
                   target="_blank"
                   rel="noreferrer noopener"
                 >GitHub</a>
               </Menu.Item>
-              <Menu.Item title="LinkedIn" key={3}>
+              <Menu.Item title="LinkedIn" key={5}>
                 <a
                   href="https://www.linkedin.com/in/giuzambot/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >LinkedIn</a>
               </Menu.Item>
-              <Menu.Item title="Meus Livros" key={3}>
+              <Menu.Item title="Meus Livros" key={6}>
                 <a
                   href="https://clubedeautores.com.br/livros/autores/giuzambot"
                   target="_blank"
                   rel="noreferrer noopener"
                 >Meus Livros</a>
               </Menu.Item>
-              <Menu.Item title="Loja" key={3}>
+              <Menu.Item title="Loja" key={7}>
                 <a
                   href="https://www.colab55.com/@giuzambot"
                   target="_blank"
