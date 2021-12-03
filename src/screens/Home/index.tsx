@@ -69,6 +69,7 @@ export default function Home() {
           <div className={styles.carousel4} />
         </Carousel>
         <div className={styles.sobre} />
+        <div className={styles.cursos} />
 
       </Content>
       <Footer className={styles.footer}>Giu Zambot ©2021</Footer>

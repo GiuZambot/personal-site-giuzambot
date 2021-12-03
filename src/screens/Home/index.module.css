@@ -60,6 +60,14 @@
   background-size: cover;
 }
 
+.cursos {
+  height: 50vw;
+  background-image: url('../../assets/home/cursos.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
  .footer {
     color:var(--primary_color);
     background-color: var(--back_color);
