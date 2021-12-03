@@ -16,5 +16,4 @@ body {
     min-height: 100vh;
     background-color: var(--back_color);
     font-family: 'Roboto', Verdana, Tahoma, sans-serif;
-    font-size: 3vh;
 }

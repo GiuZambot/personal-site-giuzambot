@@ -49,11 +49,12 @@ export default function Home() {
 
       <Content className={styles.content}>
         <Carousel autoplay className={styles.carousel}>
-          <div className={styles.carousel1}> 1</div>
-          <div className={styles.carousel2}> 2</div>
-          <div className={styles.carousel3}> 3</div>
-          <div className={styles.carousel4}> 4</div>
+          <div className={styles.carousel1} />
+          <div className={styles.carousel2} />
+          <div className={styles.carousel3} />
+          <div className={styles.carousel4} />
         </Carousel>
+        <div className={styles.sobre} />
 
       </Content>
       <Footer className={styles.footer}>Giu Zambot ©2021</Footer>
