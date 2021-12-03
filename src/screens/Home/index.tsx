@@ -33,7 +33,7 @@ export default function Home() {
                   href="https://github.com/giuzambot"
                   target="_blank"
                   rel="noreferrer noopener"
-                >Blog</a>
+                >GitHub</a>
               </Menu.Item>
               <Menu.Item title="LinkedIn" key={3}>
                 <a
@@ -41,6 +41,20 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer noopener"
                 >LinkedIn</a>
+              </Menu.Item>
+              <Menu.Item title="Meus Livros" key={3}>
+                <a
+                  href="https://clubedeautores.com.br/livros/autores/giuzambot"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >Meus Livros</a>
+              </Menu.Item>
+              <Menu.Item title="Loja" key={3}>
+                <a
+                  href="https://www.colab55.com/@giuzambot"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >Loja</a>
               </Menu.Item>
             </Menu>
           </Col>
