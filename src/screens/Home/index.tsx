@@ -1,5 +1,5 @@
 import styles from './index.module.css';
-import { Carousel, Col, Layout, Menu, Row } from 'antd';
+import { Col, Layout, Menu, Row } from 'antd';
 
 export default function Home() {
   const { Header, Footer, Content } = Layout;
