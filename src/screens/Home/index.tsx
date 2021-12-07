@@ -62,14 +62,7 @@ export default function Home() {
       </Header>
 
       <Content className={styles.content}>
-        <Carousel autoplay className={styles.carousel}>
-          <div className={styles.carousel1} />
-          <div className={styles.carousel2} />
-          <div className={styles.carousel3} />
-          <div className={styles.carousel4} />
-        </Carousel>
-        <div className={styles.sobre} />
-        <div className={styles.cursos} />
+        <h1>Cursos</h1>
 
       </Content>
       <Footer className={styles.footer}>Giu Zambot ©2021</Footer>
