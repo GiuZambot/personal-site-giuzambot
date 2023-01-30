@@ -11,7 +11,7 @@ export default function Home() {
           <Col className={styles.logo}></Col>
           <Col span={20}>
             <Menu className={styles.menu} theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-              <Menu.Item title="Votlar ao inicio" key={1}>
+              <Menu.Item title="Voltar ao inicio" key={1}>
                 <a href="/">Home</a>
               </Menu.Item>
               <Menu.Item title="JavaScript Explorer PlayGround" key={2}>

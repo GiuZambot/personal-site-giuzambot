@@ -1,14 +1,13 @@
-import React from 'react';
-import Router from './Router';
-import ReactDOM from 'react-dom';
-import reportWebVitals from './reportWebVitals';
-import "antd/dist/antd.css";
-import './index.css';
+import * as ReactDOMClient from "react-dom/client";
+import React from "react";
+import Router from "./Router";
+import "./index.css";
+import "antd/dist/reset.css";
 
-ReactDOM.render(
+const container = document.getElementById('root') || document.createElement('div');
+const root = ReactDOMClient.createRoot(container);
+export default root.render(
   <React.StrictMode>
     <Router />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
-reportWebVitals();
