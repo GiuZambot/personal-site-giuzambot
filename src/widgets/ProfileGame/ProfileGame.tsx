@@ -6,10 +6,13 @@ interface ProfileGameProps {
 
 export const ProfileGame = ({ className }: ProfileGameProps) => {
   const { unityProvider } = useUnityContext({
-    loaderUrl: "../../../public/profile-game/Build/profile-game.loader.js",
-    dataUrl: "../../../public/profile-game/Build/profile-game.data.gz",
-    frameworkUrl: "../../../public/profile-game/Build/profile-game.framework.js.gz",
-    codeUrl: "../../../public/profile-game/Build/profile-game.wasm.gz",
+    loaderUrl: "/profile-game/Build/profile-game.loader.js",
+    dataUrl: "/profile-game/Build/profile-game.data",
+    frameworkUrl: "/profile-game/Build/profile-game.framework.js",
+    codeUrl: "/profile-game/Build/profile-game.wasm",
+    companyName: "GiuZambot",
+    productName: "Profile-game",
+    productVersion: "0.1.0"
   });
 
   return <Unity className={className} unityProvider={unityProvider} />;
