@@ -9,7 +9,6 @@ export const Header = () => {
     <Content>
       <Header className={styles.header}>
         <Row>
-          <Col className={styles.logo}></Col>
           <Col span={20}>
             <MainMenu />
           </Col>
