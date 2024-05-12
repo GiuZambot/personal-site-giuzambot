@@ -7,6 +7,8 @@
 		<title>Cozinhando</title>
 		<style>
 			body {
+				display: flex;
+				justify-content: center;
 				touch-action: none;
 				margin: 0;
 				border: 0 none;
@@ -133,8 +135,8 @@
 				visibility: visible;
 			}
 		</style>
-		<link id='-gd-engine-icon' rel='icon' type='image/png' href='index.icon.png' />
-		<link rel='apple-touch-icon' href='index.apple-touch-icon.png' />
+		<link id='-gd-engine-icon' rel='icon' type='image/png' href='game/index.icon.png' />
+		<link rel='apple-touch-icon' href='game/index.apple-touch-icon.png' />
 
 	</head>
 
@@ -160,16 +162,9 @@
 			<div id="status-notice" class="godot" style="display: none;"></div>
 		</div>
 
-		<script>
-			if (!window.SharedArrayBuffer) {
-				document.getElementById('status').style.display = 'none';
-				setTimeout(() => document.getElementById('status').style.display = '', 1500);
-			}
-		</script>
-		<script src="game/coi-serviceworker.min.js"></script>
 		<script src="game/index.js"></script>
 		<script>
-			const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 1, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 1513520, "index.wasm": 35708238 }, "focusCanvas": true, "gdextensionLibs": [] };
+			const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 1, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 1484944, "index.wasm": 35708238 }, "focusCanvas": true, "gdextensionLibs": [] };
 			const engine = new Engine(GODOT_CONFIG);
 
 			(function () {
