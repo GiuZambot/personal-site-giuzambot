@@ -1,19 +1,24 @@
 import LoadingSpin from "./components/LoadingSpin";
 import { lazy, Suspense } from "react";
-import { MemoryRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const Home = lazy(
   () => import("./screens/Home/Home")
 );
 
+const Game = lazy(
+  () => import("./screens/Home/GameHome")
+);
+
 export default function Router() {
   return (
     <Suspense fallback={<LoadingSpin />}>
-      <MemoryRouter>
+      <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path="/game" element={<Game />} />
         </Routes>
-      </MemoryRouter>
+      </BrowserRouter>
     </Suspense>
   );
 }
