@@ -1,5 +1,3 @@
-import { IframeHTMLAttributes } from "react";
-
 const Game = () => {
   return (
     <div>
