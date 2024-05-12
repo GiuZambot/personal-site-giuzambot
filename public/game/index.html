@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<title>Cozinhando</title>
+		<title>Game</title>
 		<style>
 			body {
 				display: flex;
@@ -162,9 +162,16 @@
 			<div id="status-notice" class="godot" style="display: none;"></div>
 		</div>
 
+		<script>
+			if (!window.SharedArrayBuffer) {
+				document.getElementById('status').style.display = 'none';
+				setTimeout(() => document.getElementById('status').style.display = '', 1500);
+			}
+		</script>
+		<script src="coi-serviceworker.min.js"></script>
 		<script src="game/index.js"></script>
 		<script>
-			const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 1, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 1496864, "index.wasm": 35708238 }, "focusCanvas": true, "gdextensionLibs": [] };
+			const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 1, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 1508976, "index.wasm": 35708238 }, "focusCanvas": true, "gdextensionLibs": [] };
 			const engine = new Engine(GODOT_CONFIG);
 
 			(function () {
