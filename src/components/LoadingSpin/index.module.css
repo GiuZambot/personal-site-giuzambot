@@ -1,7 +1,18 @@
 .loadingSpinRow {
     min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .spin {
     transform: scale(200%);
 }
+
+.spinMessage {
+    font-size: x-large;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
