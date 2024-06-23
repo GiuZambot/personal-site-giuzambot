@@ -3,12 +3,12 @@
   "buildCommand": "npm run build",
   "rewrites": [
     {
-      "source": "/game/(.*)",
-      "destination": "/game/$1"
+      "source": "/",
+      "destination": "/"
     },
     {
-      "source": "/(.*)",
-      "destination": "/"
+      "source": "/game",
+      "destination": "/game"
     }
   ],
   "headers": [
