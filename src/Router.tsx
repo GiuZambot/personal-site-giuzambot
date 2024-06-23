@@ -1,6 +1,7 @@
-import LoadingSpin from "./components/LoadingSpin";
-import { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { lazy, Suspense } from "react";
+import { LoadingSpin } from "./components/LoadingSpin";
+import { PrivacyPolicyTappyEscape } from "./screens/privacy/tappyescape/PrivacyPolice";
 
 const Home = lazy(
   () => import("./screens/Home/Home")
@@ -16,7 +17,8 @@ export default function Router() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path="/game" element={<Game />} />
+          <Route path="/cooking" element={<Game />} />
+          <Route path="/privacy/tappyescape" element={<PrivacyPolicyTappyEscape />} />
         </Routes>
       </BrowserRouter>
     </Suspense>
