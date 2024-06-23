@@ -1,0 +1,53 @@
+.layout {
+  background-color: #121212;
+}
+
+.privacy-policy {
+  background-color: #252525;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 1rem auto;
+}
+
+.language-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.language-buttons button {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.language-buttons button:hover {
+  background-color: #333;
+}
+
+.policy-content {
+  background-color: #1f1f1f;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.policy-content h1, .policy-content h2 {
+  color: #ffffff;
+  margin: 1rem 0;
+}
+
+.policy-content a {
+  color: #64b5f6;
+  text-decoration: none;
+}
+
+.policy-content a:hover {
+  text-decoration: underline;
+}
