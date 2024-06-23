@@ -3,8 +3,8 @@
   "buildCommand": "npm run build",
   "rewrites": [
     {
-      "source": "/cooking_game_iframe",
-      "destination": "/cooking_game_iframe/index.html"
+      "source": "/cooking_game",
+      "destination": "/cooking_game/index.html"
     },
     {
       "source": "/(.*)",
