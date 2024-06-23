@@ -17,7 +17,7 @@ export default function Router() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path="/cooking" element={<Game />} />
+          <Route path="/cooking_game" element={<Game />} />
           <Route path="/privacy/tappyescape" element={<PrivacyPolicyTappyEscape />} />
         </Routes>
       </BrowserRouter>

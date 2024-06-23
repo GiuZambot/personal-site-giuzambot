@@ -7,8 +7,8 @@
       "destination": "/"
     },
     {
-      "source": "/game",
-      "destination": "/game"
+      "source": "/cooking_game",
+      "destination": "/cooking_game"
     }
   ],
   "headers": [
