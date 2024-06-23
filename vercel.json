@@ -3,12 +3,12 @@
   "buildCommand": "npm run build",
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/"
-    },
-    {
       "source": "/cooking_game",
       "destination": "/cooking_game"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
     }
   ],
   "headers": [
