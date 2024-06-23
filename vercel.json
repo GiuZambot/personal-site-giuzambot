@@ -41,7 +41,15 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors 'self' https://*.giuzambot.com"
+          "value": "default-src 'self'; frame-ancestors 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; frame-src 'self'; font-src 'self'; worker-src 'self'; form-action 'self'; base-uri 'self'; manifest-src 'self'; child-src 'self'; frame-ancestors 'self'; prefetch-src 'self';"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy-Report-Only",
+          "value": "same-origin"
         }
       ]
     }
