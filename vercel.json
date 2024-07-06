@@ -22,7 +22,7 @@
       ]
     },
     {
-      "source": "/(.*)",
+      "source": "/games/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Credentials",
