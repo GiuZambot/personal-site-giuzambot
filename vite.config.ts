@@ -1,18 +1,25 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import mkcert from 'vite-plugin-mkcert'
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
-  plugins: [react(),
-  {
-    name: 'configure-response-headers',
-    configureServer(server) {
-      server.middlewares.use((req, res, next) => {
-        res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
-        res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-        next();
-      });
+  plugins: [
+    mkcert(),
+    react(),
+    {
+      name: 'configure-response-headers',
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.originalUrl.startsWith('/music')) {
+            res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless (Chrome > 96)');
+          } else {
+            res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+            res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+          }
+          next();
+        });
+      }
     }
-  }],
-
+  ],
 })

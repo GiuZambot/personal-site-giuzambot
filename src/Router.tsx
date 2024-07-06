@@ -11,12 +11,17 @@ const Game = lazy(
   () => import("./screens/Home/GameHome")
 );
 
+const Musics = lazy(
+  () => import("./screens/Music/Music")
+);
+
 export default function Router() {
   return (
     <Suspense fallback={<LoadingSpin />}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/music' element={<Musics />} />
           <Route path="/games/cooking" element={<Game />} />
           <Route path="/privacy/tappyescape" element={<PrivacyPolicyTappyEscape />} />
         </Routes>

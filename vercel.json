@@ -13,6 +13,15 @@
   ],
   "headers": [
     {
+      "source": "/music/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "credentialless (Chrome > 96)"
+        }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         {
@@ -42,6 +51,11 @@
         {
           "key": "Content-Security-Policy",
           "value": "frame-ancestors 'self' https://*.giuzambot.com"
+        }
+        ,
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-src 'self' https://www.youtube.com"
         }
       ]
     }
