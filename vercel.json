@@ -17,7 +17,7 @@
       "headers": [
         {
           "key": "Cross-Origin-Embedder-Policy",
-          "value": "credentialless (Chrome > 96)"
+          "value": "credentialless"
         }
       ]
     },
