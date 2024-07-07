@@ -13,29 +13,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-        { "key": "Cross-Origin-Embedder-Policy", "value": "credentialless (Chrome > 96)" },
-        {
-          "key": "Content-Security-Policy",
-          "value": "frame-src 'self' https://www.youtube.com"
-        }
-      ]
-    },
-    {
       "source": "/music",
-      "headers": [
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-        { "key": "Cross-Origin-Embedder-Policy", "value": "credentialless (Chrome > 96)" },
-        {
-          "key": "Content-Security-Policy",
-          "value": "frame-src 'self' https://www.youtube.com"
-        }
-      ]
-    },
-    {
-      "source": "/music/(.*)",
       "headers": [
         { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
         { "key": "Cross-Origin-Embedder-Policy", "value": "credentialless (Chrome > 96)" },
