@@ -1,5 +1,3 @@
-import { Footer } from "../../../components/Footer/Footer";
-import { Header } from "../../../components/Header/Header";
 import { Layout } from "antd";
 import { useState } from "react";
 import "./PrivacyPolice.css";
@@ -13,7 +11,6 @@ export const PrivacyPolicyTappyEscape = () => {
 
   return (
     <Layout className="layout">
-      <Header />
       <div className="privacy-policy">
         <div className="language-buttons">
           <button onClick={() => handleLanguageChange('pt')}>Português</button>
@@ -87,7 +84,6 @@ export const PrivacyPolicyTappyEscape = () => {
           </div>
         )}
       </div>
-      <Footer />
     </Layout>
   );
 };

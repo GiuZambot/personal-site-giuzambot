@@ -1,5 +1,5 @@
 import { Menu } from "antd";
-import styles from "../../screens/Home/Home.module.css"
+import "../../screens/Home/Home.css"
 import { Link } from "react-router-dom";
 
 const items = [
@@ -27,5 +27,5 @@ const items = [
 
 export const MainMenu = () => {
   return (
-    <Menu className={styles.menu} theme="dark" mode="horizontal" defaultSelectedKeys={['1']} items={items} />);
+    <Menu className="menu" theme="dark" mode="horizontal" defaultSelectedKeys={['1']} items={items} />);
 }

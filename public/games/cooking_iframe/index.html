@@ -3,24 +3,27 @@
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta name="viewport" content="width=device-width, user-scalable=yes">
 		<title>Cozinhando 0.2</title>
 		<style>
 			body {
-				display: flex;
-				justify-content: center;
-				touch-action: none;
-				margin: 0;
-				border: 0 none;
-				padding: 0;
-				text-align: center;
-				background-color: black;
+				display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    left: 0;
+    border: 0 none;
+    padding: 0;
+    background-color: #0c0c0c;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 			}
 
 			#canvas {
 				display: block;
-				margin: 0;
+				margin: 0 auto;
 				color: white;
+				height:100%;
 			}
 
 			#canvas:focus {
@@ -140,7 +143,7 @@
 
 	</head>
 
-	<body>
+	<body id="body">
 		<canvas id="canvas">
 			HTML5 canvas appears to be unsupported in the current browser.<br>
 			Please try updating or use a different browser.
@@ -164,7 +167,7 @@
 
 		<script src="index.js"></script>
 		<script>
-			const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 1, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 11120848, "index.wasm": 49282035 }, "focusCanvas": true, "gdextensionLibs": [] };
+			const GODOT_CONFIG = { "args": [], "canvasResizePolicy": 2, "executable": "index", "experimentalVK": false, "fileSizes": { "index.pck": 11120848, "index.wasm": 49282035 }, "focusCanvas": true, "gdextensionLibs": [] };
 			const engine = new Engine(GODOT_CONFIG);
 
 			(function () {

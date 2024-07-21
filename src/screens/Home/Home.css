@@ -1,0 +1,590 @@
+.godot-content {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.godot-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.logo {
+  width: 7%;
+  background-color: rgba(82, 102, 212, 0.63);
+  background-image: url('../../assets/home/giu_zambot_logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  font-size: 100%;
+}
+
+.content {
+  background-color: var(--back_color);
+}
+
+.sobre {
+  height: 110vw;
+  background-image: url('../../assets/home/curriculo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cursos {
+  height: 50vw;
+  background-image: url('../../assets/home/cursos.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.footer {
+  color: var(--primary_color);
+  background-color: var(--back_color);
+  text-align: center;
+  font-size: 130%;
+}
+
+.profileGame {
+  width: 100vw;
+  height: calc(100vh - 140px);
+}
+
+
+/* ========= */
+
+.windows {
+  width: 100%;
+  height: 100vh;
+}
+
+#desktop {
+  width: 100%;
+  height: calc(100% - 40px);
+  background: url('./assets/wallpaper.gif') no-repeat center center;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+#taskbar {
+  width: 100%;
+  height: 40px;
+  background: #1f2d53;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0 25px 0 10px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5);
+}
+
+#start-button {
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+#start-button img {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+#search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  padding: 0 5px;
+  flex-grow: 1;
+  margin: 0 10px;
+  width: 260px;
+  height: 30px;
+}
+
+#search-bar img {
+  width: 16px;
+  height: 16px;
+}
+
+#search-input {
+  border: none;
+  background: none;
+  padding: 5px;
+  margin-left: 5px;
+  flex-grow: 1;
+  font-size: 14px;
+  width: 150px;
+}
+
+#taskbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#taskbar-icons img {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+
+.taskbar-icon {
+  display: flex;
+  align-items: center;
+}
+
+.taskbar-icon img {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+#clock {
+  color: white;
+  font-size: 12px;
+  margin: 0 4px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.icon img {
+  width: 48px;
+  height: 48px;
+}
+
+#open-windows {
+  display: flex;
+  gap: 5px;
+}
+
+.taskbar-item {
+  height: 40px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.taskbar-item:hover {
+  background-color: #e1e1e150;
+}
+
+.taskbar-item span {
+  display: flex;
+  gap: 10px;
+  color: #eee;
+  font-size: 14px;
+  align-items: center;
+}
+
+.taskbar-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.taskbar-item.minimized img {
+  opacity: 0.5;
+}
+
+.modal {
+  width: 600px;
+  background-color: #EEE;
+  height: 400px;
+  position: absolute;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.2s, top 0.2s;
+  user-select: none;
+}
+
+.modal-header {
+  background-color: #111010;
+  padding: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  height: 40px;
+  user-select: none;
+}
+
+.modal-header span {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  border-radius: 10px 10px 0 0;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.curve-left {
+  width: 10px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.curve-left::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 40px;
+  background-color: #111010;
+  border-radius: 0 0 15px 0;
+}
+
+.curve-right {
+  width: 10px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+}
+.curve-right::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 40px;
+  background-color: #111010;
+  border-radius: 0 0 0 15px;
+}
+
+.modal-header span img {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+.modal-header h3 {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  color: #eee;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.modal-header .header-buttons {
+  align-self: center;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.modal-header button {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.modal-header button:hover {
+  background-color: #505050;
+  color: #fff;
+}
+
+.modal-header button:active {
+  background-color: #3b3b3b;
+}
+
+.modal-content {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal.dragging iframe {
+  pointer-events: none;
+}
+
+.modal.dragging, .modal.dragging * {
+  transition: none;
+  user-select: none;
+}
+
+/* Modal toolbar */
+
+.modal-toolbar {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  padding: 5px;
+}
+
+.modal-toolbar .nav-btn {
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+.modal-toolbar .nav-btn:hover {
+  color: #fff;
+}
+
+.modal-toolbar .url-bar {
+  flex-grow: 1;
+  padding: 5px 10px;
+  margin: 0 10px;
+  border: 1px solid #555;
+  background-color: #222;
+  color: #ccc;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+.modal-toolbar .url-bar:focus {
+  outline: none;
+  border-color: #777;
+}
+
+/* Resize */
+
+.resize-grip {
+  position: absolute;
+  background: transparent;
+}
+
+.resize-grip-top,
+.resize-grip-bottom {
+  height: 5px;
+  left: 0;
+  right: 0;
+  cursor: ns-resize;
+}
+
+.resize-grip-top {
+  top: 0;
+}
+
+.resize-grip-bottom {
+  bottom: 0;
+}
+
+.resize-grip-left,
+.resize-grip-right {
+  width: 5px;
+  top: 0;
+  bottom: 0;
+  cursor: ew-resize;
+}
+
+.resize-grip-left {
+  left: 0;
+}
+
+.resize-grip-right {
+  right: 0;
+}
+
+.resize-grip-top-left,
+.resize-grip-top-right,
+.resize-grip-bottom-left,
+.resize-grip-bottom-right {
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+}
+
+.resize-grip-top-left {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+
+.resize-grip-top-right {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+
+.resize-grip-bottom-left {
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+
+.resize-grip-bottom-right {
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+
+
+/* ------------------------------------ */
+
+.widget {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 50px;
+  right: 50px;
+  padding: 10px;
+  background-color: transparente;
+  z-index: 800;
+}
+
+.widget #capybara-img {
+  width: 200px;
+}
+
+.widget .capybara {
+  width: 200px;
+  position: relative;
+  transform-origin: bottom;
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.capybara-mouth, .capybara-mouth.talking {
+  position: absolute;
+  width: 65px;
+  top: 26%;
+  left: 22%;
+  transform-origin: top;
+}
+
+.capybara-mouth.talking {
+  animation: mouth-move 0.5s infinite;
+}
+
+.widget input {
+  width: calc(100% - 20px);
+  margin: 10px 0;
+}
+
+#responses {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.response-bubble {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  position: relative;
+}
+
+.response-bubble .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+@keyframes mouth-move {
+  0%, 100% {
+    transform: perspective(500px) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(100px) rotateX(30deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.eye {
+  position: absolute;
+  width: 11px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.left-eye {
+  top: 20%;
+  left: 22%;
+  z-index: 1;
+}
+
+.right-eye {
+  top: 22%;
+  right: 42%;
+  z-index: 1;
+}
+
+.eyelid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(144, 98, 98);
+  border-radius: 50%;
+  transform: scaleY(0);
+  transform-origin: top;
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% {
+    transform: scaleY(0);
+  }
+  92%, 98% {
+    transform: scaleY(1);
+  }
+}

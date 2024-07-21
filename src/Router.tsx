@@ -2,13 +2,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { LoadingSpin } from "./components/LoadingSpin";
 import { PrivacyPolicyTappyEscape } from "./screens/privacy/tappyescape/PrivacyPolice";
+import './index.css'
 
 const Home = lazy(
   () => import("./screens/Home/Home")
 );
 
 const Game = lazy(
-  () => import("./screens/Home/GameHome")
+  () => import("./widgets/GodotGame/GodotGame")
 );
 
 const Musics = lazy(

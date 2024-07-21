@@ -9,7 +9,14 @@
 :root {
   --back_color: rgb(49, 58, 88);
   --primary_color: azure;
+  --icon-size-md: 20px;
+  --icon-size-sm: 15px;
 }
+
+#root {
+  min-height: 100vh;
+}
+
 
 body {
   color: var(--primary_color);

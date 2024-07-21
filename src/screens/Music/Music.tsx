@@ -1,12 +1,9 @@
-import { Footer } from "../../components/Footer/Footer";
-import { Header } from "../../components/Header/Header";
 import { Layout } from "antd";
 import styles from "./Music.module.css"
 
 export default function Musics() {
   return (
     <Layout>
-      <Header />
       <div className={styles.videoResponsive}>
         <iframe
           width="560"
@@ -18,7 +15,6 @@ export default function Musics() {
           allowFullScreen
         ></iframe>
       </div>
-      <Footer />
     </Layout>
   );
 }
