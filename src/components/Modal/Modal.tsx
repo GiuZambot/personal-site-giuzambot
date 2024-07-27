@@ -1,6 +1,9 @@
-import { IconProps } from "./DesktopIcons";
+import Folder from "../Folder/Folder";
+import { createRoot } from "react-dom/client";
+import { IconProps } from "../DesktopIcons/DesktopIcons";
 
 let highestZIndex = 1000;
+let differential = 0;
 
 export function openModal(icon: IconProps) {
   const existingModal = document.getElementById(`modal-${icon.id}`)
@@ -39,13 +42,17 @@ export function openModal(icon: IconProps) {
       <button class="nav-btn" id="forward-btn" title="Avançar">&#x25B6;</button>
       <button class="nav-btn" id="refresh-btn" title="Recarregar">&#x21BB;</button>
       <button class="nav-btn" id="home-btn" title="Home">&#x2302;</button>
-      <input type="text" class="url-bar" id="url-bar" value="${icon.url}">
+      <input type="text" class="url-bar" id="url-bar" value="${icon.url || icon.name}">
       <button class="nav-btn" id="profile-btn" title="Perfil">&#x1F464;</button>
       <button class="nav-btn" id="menu-btn" title="Menu">&#x2630;</button>
     </div>
-    <div class="modal-content">
-      <iframe id="iframe-${icon.id}" src="${icon.url}" allow="cross-origin-isolated; allow-same-origin; allow-scripts"></iframe>
-    </div>
+    <div class="modal-content" id="modal-content-${icon.id}">
+      <iframe
+        id="iframe-${icon.id}"
+        src=${icon.type === 'folder' ? `/folder/${icon.content}` : icon.url }
+        title={icon.name}
+      ></iframe>
+      </div>
     <div class="resize-grip resize-grip-top"></div>
     <div class="resize-grip resize-grip-bottom"></div>
     <div class="resize-grip resize-grip-left"></div>
@@ -58,13 +65,23 @@ export function openModal(icon: IconProps) {
 
   document.body.appendChild(modal);
 
-  const centerModal = () => {
-    modal.style.left = `calc(50% - ${modal.offsetWidth / 2}px)`;
-    modal.style.top = `calc(50% - ${modal.offsetHeight / 2}px)`;
+  if (icon.type === 'folder' && icon.content) {
+    const modalContent = document.getElementById(`modal-content-${icon.id}`);
+    if (modalContent) {
+      const root = createRoot(modalContent);
+      root.render(<Folder content={icon.content} />);
+    }
+  }
+
+  const centerModal = (centered: boolean) => {
+    const modifier = centered ? 0 : differential
+    modal.style.left = `calc(50% - ${modal.offsetWidth / 2}px + ${modifier}px)`;
+    modal.style.top = `calc(50% - ${modal.offsetHeight / 2}px + ${modifier}px)`;
+    differential = differential > 200 ? -50 : differential + 50
   };
 
-  centerModal();
-  window.addEventListener('resize', centerModal)
+  centerModal(false);
+  window.addEventListener('resize', () => centerModal(true))
 
   highestZIndex++;
   modal.style.zIndex = `${highestZIndex}`;
@@ -87,7 +104,7 @@ export function openModal(icon: IconProps) {
     if (isMaximized) {
       modal.style.width = '600px';
       modal.style.height = '400px';
-      centerModal();
+      centerModal(true);
     } else {
       modal.style.width = '100%';
       modal.style.height = 'calc(100% - 40px)';
@@ -131,19 +148,19 @@ export function openModal(icon: IconProps) {
 
   header.ondragstart = () => false;
 
-    const backBtn = modal.querySelector('#back-btn');
-    const forwardBtn = modal.querySelector('#forward-btn');
-    const refreshBtn = modal.querySelector('#refresh-btn');
-    const homeBtn = modal.querySelector('#home-btn');
+  const backBtn = modal.querySelector('#back-btn');
+  const forwardBtn = modal.querySelector('#forward-btn');
+  const refreshBtn = modal.querySelector('#refresh-btn');
+  const homeBtn = modal.querySelector('#home-btn');
 
-    backBtn?.addEventListener('click', () => iframe?.contentWindow?.history.back());
-    forwardBtn?.addEventListener('click', () => iframe?.contentWindow?.history.forward());
-    refreshBtn?.addEventListener('click', () => iframe.src = iframe.src + '#');
-    homeBtn?.addEventListener('click', () => iframe.src = icon.url);
+  backBtn?.addEventListener('click', () => iframe?.contentWindow?.history.back());
+  forwardBtn?.addEventListener('click', () => iframe?.contentWindow?.history.forward());
+  refreshBtn?.addEventListener('click', () => iframe.src = iframe.src + '#');
+  homeBtn?.addEventListener('click', () => iframe.src = icon.url || '');
 
-    urlBar.addEventListener('change', () => {
-      iframe.src = urlBar.value;
-    });
+  urlBar.addEventListener('change', () => {
+    iframe.src = urlBar.value;
+  });
 
 
   modal.addEventListener('mousedown', () => {
@@ -229,11 +246,11 @@ function addTaskbarItem(icon: IconProps) {
 
   taskbarItem.addEventListener('click', () => {
     const modal = document.getElementById(`modal-${icon.id}`);
-    if (modal?.style.display === 'none') {
-      modal.style.display = 'block';
+    if (modal?.style.visibility === 'hidden') {
+      modal.style.visibility = 'visible';
       taskbarItem.classList.remove('minimized');
     } else if (modal) {
-      modal.style.display = 'none';
+      modal.style.visibility = 'hidden';
       taskbarItem.classList.add('minimized');
     }
   });

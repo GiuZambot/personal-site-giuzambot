@@ -8,41 +8,11 @@ import Chevron from '../../assets/chevron-up.svg'
 import Sound from '../../assets/sound-max.svg'
 import Notification from '../../assets/notification.svg'
 
-import Capib from '../../assets/capib.png'
-import CapibMouth from '../../assets/capib-mouth.png'
-
 import { useEffect, useRef } from "react";
 import { updateClock } from "./methods";
-import DesktopIcon from "./DesktopIcons";
-
-const defaultIcons = [
-  {
-    id: "icon4",
-    name: "game rel",
-    img: "../../assets/capib.png",
-    top: 550,
-    left: 50,
-    url: "games/cooking",
-  },
-  {
-    id: "icon5",
-    name: "Music",
-    img: "../../assets/capib.png",
-    top: 650,
-    left: 50,
-    url: "music",
-  },
-  {
-    id: "icon6",
-    name: "Cooking",
-    img: "../../assets/capib.png",
-    top: 750,
-    left: 50,
-    url: "https://localhost:5173/games/cooking",
-  },
-];
-
-let voices = []
+import Bibi from "../../components/Bibi/Bibi";
+import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
+import { defaultIcons } from "./Icons";
 
 export default function Home() {
   const clock = useRef<HTMLDivElement>(null)
@@ -53,16 +23,6 @@ export default function Home() {
       timer = setInterval(() => updateClock(clock.current!), 1000)
     }
 
-
-    const loadVoices = () => {
-      voices = window.speechSynthesis.getVoices()
-      console.log(voices);
-    };
-
-    loadVoices();
-
-    window.speechSynthesis.onvoiceschanged = function () { loadVoices(); }
-
     return () => {
       clearInterval(timer)
     }
@@ -72,24 +32,12 @@ export default function Home() {
     <Layout.Content>
       <div className="windows">
         <div id="desktop">
-          <div id="icons">
+        <h1>Giu Zambot</h1>
             {defaultIcons.map(icon => (
-            <DesktopIcon key={icon.id} {...icon} />
+              <DesktopIcon key={icon.id} {...icon} />
             ))}
-          </div>
-          <div id="capybara-widget" className="widget">
-            <div className="capybara">
-              <div className="eye left-eye">
-                <div className="eyelid"></div>
-              </div>
-              <div className="eye right-eye">
-                <div className="eyelid"></div>
-              </div>
-              <img src={Capib} alt="Capybara" id="capybara-img" />
-              <img src={CapibMouth} className="capybara-mouth" alt="Capybara Mouth" id="capybara-mouth" />
-            </div>
-            <input type="text" id="input-text" placeholder="Type a message" hidden />
-            <div id="responses"></div>
+          <Bibi />
+          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           </div>
         </div>
         <div id="taskbar">

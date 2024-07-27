@@ -1,6 +1,6 @@
 import Capib from "../../assets/capib.png";
 import React, { useRef } from "react";
-import { openModal } from "./Modal";
+import { openModal } from "../Modal/Modal";
 
 export interface IconProps {
   id: string;
@@ -8,20 +8,38 @@ export interface IconProps {
   img: string;
   top: number;
   left: number;
-  url: string;
+  url?: string;
+  type?: 'folder' | 'route' | 'external'; 
+  content?: string;
 }
 
-const DesktopIcon = (icon: IconProps ) => {
+const DesktopIcon = (icon: IconProps) => {
   const iconRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (event: React.MouseEvent) => {
     event.preventDefault();
+    const parent = iconRef.current?.parentElement;
     const shiftX = event.clientX - iconRef.current!.getBoundingClientRect().left;
     const shiftY = event.clientY - iconRef.current!.getBoundingClientRect().top;
 
     const moveAt = (pageX: number, pageY: number) => {
-      iconRef.current!.style.left = pageX - shiftX + "px";
-      iconRef.current!.style.top = pageY - shiftY + "px";
+      if (!parent) return;
+
+      const parentRect = parent.getBoundingClientRect()
+
+      let newLeft = pageX - shiftX - parentRect.left;
+      let newTop = pageY - shiftY - parentRect.top;
+
+      const rightLimit = parent.clientWidth - iconRef.current!.offsetWidth;
+      const bottomLimit = parent.clientHeight - iconRef.current!.offsetHeight;
+
+      if (newLeft < 0) newLeft = 0;
+      if (newTop < 10) newTop = 10;
+      if (newLeft > rightLimit) newLeft = rightLimit;
+      if (newTop > bottomLimit) newTop = bottomLimit;
+
+      iconRef.current!.style.left = newLeft + "px";
+      iconRef.current!.style.top = newTop + "px";
     };
 
     const onMouseMove = (event: MouseEvent) => {
@@ -40,9 +58,12 @@ const DesktopIcon = (icon: IconProps ) => {
   };
 
   const handleDoubleClick = () => {
-    openModal(icon)
-  }
-
+    if (icon.type === 'external' && icon.url) {
+      window.open(icon.url, '_blank');
+    } else {
+      openModal(icon);
+    }
+  };
 
   return (
     <div
@@ -53,7 +74,7 @@ const DesktopIcon = (icon: IconProps ) => {
       onMouseDown={handleMouseDown}
       onDoubleClick={handleDoubleClick}
     >
-      <img src={Capib} alt={icon.name} />
+      <img src={icon.img} alt={icon.name} />
       <div>{icon.name}</div>
     </div>
   );
