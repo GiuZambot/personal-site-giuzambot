@@ -7,7 +7,7 @@ import Search from '../../assets/search.svg'
 import Chevron from '../../assets/chevron-up.svg'
 import Sound from '../../assets/sound-max.svg'
 import Notification from '../../assets/notification.svg'
-
+import wallpaper from '../../assets/wallpaper.gif'
 import { useEffect, useRef } from "react";
 import { updateClock } from "./methods";
 import Bibi from "../../components/Bibi/Bibi";
@@ -31,11 +31,16 @@ export default function Home() {
   return (
     <Layout.Content>
       <div className="windows">
-        <div id="desktop">
-        <h1>Giu Zambot</h1>
-            {defaultIcons.map(icon => (
-              <DesktopIcon key={icon.id} {...icon} />
-            ))}
+        <div id="desktop"
+          style={{
+            background: `url(${wallpaper}) no-repeat center center`,
+            backgroundSize: '100% 100%',
+          }}
+        >
+          <h1>Giu Zambot</h1>
+          {defaultIcons.map(icon => (
+            <DesktopIcon key={icon.id} {...icon} />
+          ))}
           <Bibi />
           <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           </div>

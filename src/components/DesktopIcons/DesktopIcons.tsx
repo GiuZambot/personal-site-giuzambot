@@ -1,4 +1,3 @@
-import Capib from "../../assets/capib.png";
 import React, { useRef } from "react";
 import { openModal } from "../Modal/Modal";
 
