@@ -37,7 +37,10 @@ export default function Home() {
             backgroundSize: '100% 100%',
           }}
         >
-          <h1>Giu Zambot</h1>
+          <div className="site-title">
+            <h1>Giu Zambot</h1>
+            <p>Games and Codes</p>
+          </div>
           {defaultIcons.map(icon => (
             <DesktopIcon key={icon.id} {...icon} />
           ))}

@@ -1,12 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap);
 
-h1 {
-  font-family: 'Raleway', sans-serif;
-  color: #8E44AD;
-  font-size: 3em;
-  margin-left: 1rem;
-}
-
 * {
   margin: 0;
   padding: 0;

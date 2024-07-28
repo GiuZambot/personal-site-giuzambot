@@ -19,6 +19,27 @@
   align-items: center;
 }
 
+.site-title {
+  width: 19rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+}
+
+.site-title h1 {
+  font-family: 'Raleway', sans-serif;
+  color: #8E44AD;
+  font-size: 3em;
+}
+
+.site-title p {
+  font-family: 'Raleway', sans-serif;
+  color: #8E44AD;
+  text-align: right;
+}
+
 .spacer {
   flex-grow: 1;
 }
@@ -170,7 +191,6 @@
 
 .icon {
   width: 60px;
-  height: 60px;
   position: absolute;
   cursor: pointer;
   display: flex;

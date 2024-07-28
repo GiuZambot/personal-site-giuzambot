@@ -8,7 +8,7 @@ export interface IconProps {
   top: number;
   left: number;
   url?: string;
-  type?: 'folder' | 'route' | 'external'; 
+  type?: 'folder' | 'route' | 'external';
   content?: string;
 }
 
