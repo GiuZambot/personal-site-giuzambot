@@ -13,6 +13,7 @@
   "dependencies": {
     "@google/generative-ai": "^0.16.0",
     "antd": "^5.19.3",
+    "quantaui": "^0.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",

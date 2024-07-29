@@ -2,6 +2,7 @@ import Capib from '../../assets/capib.png'
 import LinkedIn from '../../assets/linkedin.svg'
 import Github from '../../assets/github.svg'
 import Youtube from '../../assets/youtube.svg'
+import Jep from '../../assets/jep.svg'
 import { IconProps } from '../../components/DesktopIcons/DesktopIcons';
 
 interface IconsMap {
@@ -181,6 +182,14 @@ export const defaultIcons: IconProps[] = [
     left: 30,
     type: 'external',
     url: 'https://github.com/giuzambot',
+  },
+  {
+    id: "Jep",
+    name: "JEP",
+    img: Jep,
+    top: initialPosition + 400,
+    left: 30,
+    url: 'https://jep.vercel.app/',
   }
 ];
 

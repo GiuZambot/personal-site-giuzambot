@@ -49,8 +49,9 @@ export function openModal(icon: IconProps) {
     <div class="modal-content" id="modal-content-${icon.id}">
       <iframe
         id="iframe-${icon.id}"
-        src=${icon.type === 'folder' ? `/folder/${icon.content}` : icon.url }
+        src=${icon.url}
         title={icon.name}
+        credentialless
       ></iframe>
       </div>
     <div class="resize-grip resize-grip-top"></div>

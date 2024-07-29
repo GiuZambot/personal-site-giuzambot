@@ -1,18 +1,17 @@
-import { Layout } from "antd";
-import "./Home.css"
-
-import Battery from '../../assets/battery.svg'
-import Logo from '../../assets/logo.svg'
-import Search from '../../assets/search.svg'
-import Chevron from '../../assets/chevron-up.svg'
-import Sound from '../../assets/sound-max.svg'
-import Notification from '../../assets/notification.svg'
-import wallpaper from '../../assets/wallpaper.gif'
-import { useEffect, useRef } from "react";
-import { updateClock } from "./methods";
+import Battery from "../../assets/battery.svg";
 import Bibi from "../../components/Bibi/Bibi";
+import Chevron from "../../assets/chevron-up.svg";
 import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
+import Logo from "../../assets/logo.svg";
+import Notification from "../../assets/notification.svg";
+import Search from "../../assets/search.svg";
+import Sound from "../../assets/sound-max.svg";
+import wallpaper from "../../assets/wallpaper.gif";
 import { defaultIcons } from "./Icons";
+import { Layout } from "antd";
+import { updateClock } from "./methods";
+import { useEffect, useRef } from "react";
+import "./Home.css";
 
 export default function Home() {
   const clock = useRef<HTMLDivElement>(null)
