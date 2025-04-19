@@ -1,5 +1,10 @@
 .layout {
   background-color: #121212;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centraliza verticalmente */
+  padding: 2rem; /* evita que fique colado nas bordas em telas menores */
 }
 
 .privacy-policy {
@@ -9,7 +14,8 @@
   border-radius: 10px;
   font-family: Arial, sans-serif;
   max-width: 800px;
-  margin: 1rem auto;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .language-buttons {
