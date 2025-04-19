@@ -1,9 +1,10 @@
-import Capib from '../../assets/capib.png'
-import LinkedIn from '../../assets/linkedin.svg'
-import Github from '../../assets/github.svg'
-import Youtube from '../../assets/youtube.svg'
-import Jep from '../../assets/jep.svg'
-import { IconProps } from '../../components/DesktopIcons/DesktopIcons';
+import Capib from "../../assets/capib.png";
+import Github from "../../assets/github.svg";
+import Jep from "../../assets/jep.svg";
+import LinkedIn from "../../assets/linkedin.svg";
+import almatter from "../../assets/logo_almatter48x48.png";
+import Youtube from "../../assets/youtube.svg";
+import { IconProps } from "../../components/DesktopIcons/DesktopIcons";
 
 interface IconsMap {
   [key: string]: IconProps[];
@@ -25,10 +26,10 @@ export const myGames: IconProps[] = [
     top: 130,
     left: 20,
     url: "/games/island",
-  }
+  },
 ];
 
-let musicId = 1
+let musicId = 1;
 export const myMusics: IconProps[] = [
   {
     id: `music-${musicId++}`,
@@ -141,10 +142,10 @@ export const myMusics: IconProps[] = [
     top: 120,
     left: 420,
     url: "music/jk_JipWv9tw",
-  }
+  },
 ];
 
-const initialPosition = 100
+const initialPosition = 100;
 
 export const defaultIcons: IconProps[] = [
   {
@@ -153,8 +154,8 @@ export const defaultIcons: IconProps[] = [
     img: Capib,
     top: initialPosition,
     left: 30,
-    type: 'folder',
-    content: 'myGames',
+    type: "folder",
+    content: "myGames",
   },
   {
     id: "Musics",
@@ -162,40 +163,47 @@ export const defaultIcons: IconProps[] = [
     img: Youtube,
     top: initialPosition + 100,
     left: 30,
-    type: 'folder',
-    content: 'myMusics',
+    type: "folder",
+    content: "myMusics",
+  },
+  {
+    id: "almatter",
+    name: "almatter games",
+    img: almatter,
+    top: initialPosition + 200,
+    left: 30,
+    url: "https://almatter.com.br/",
   },
   {
     id: "LinkedIn",
     name: "LinkedIn",
     img: LinkedIn,
-    top: initialPosition + 200,
+    top: initialPosition + 300,
     left: 30,
-    type: 'external',
-    url: 'https://www.linkedin.com/in/giuzambot',
+    type: "external",
+    url: "https://www.linkedin.com/in/giuzambot",
   },
   {
     id: "GitHub",
     name: "GitHub",
     img: Github,
-    top: initialPosition + 300,
+    top: initialPosition + 400,
     left: 30,
-    type: 'external',
-    url: 'https://github.com/giuzambot',
+    type: "external",
+    url: "https://github.com/giuzambot",
   },
   {
     id: "Jep",
     name: "JEP",
     img: Jep,
-    top: initialPosition + 400,
+    top: initialPosition + 500,
     left: 30,
-    url: 'https://jep.vercel.app/',
-  }
+    url: "https://jep.vercel.app/",
+  },
 ];
-
 
 export const iconsMap: IconsMap = {
   myGames,
   myMusics,
-  defaultIcons
-}
+  defaultIcons,
+};
