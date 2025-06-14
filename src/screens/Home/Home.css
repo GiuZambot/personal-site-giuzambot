@@ -100,6 +100,12 @@
   position: relative;
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-auto-rows: 100px;
+  gap: 12px;
+  padding: 16px;
+  overflow: auto;
 }
 
 #desktop {
@@ -190,20 +196,34 @@
 }
 
 .icon {
-  width: 60px;
-  position: absolute;
-  cursor: pointer;
+  width: 80px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
+  position: relative;
+  cursor: pointer;
   color: rgb(66, 66, 66);
 }
 
 .icon img {
   width: 48px;
   height: 48px;
+}
+
+.icon div {
+  font-size: 12px;
+  line-height: 1.2;
+  margin-top: 6px;
+  height: 2.4em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 #open-windows {
@@ -240,6 +260,7 @@
 }
 
 .modal {
+  min-width: 400px;
   width: 600px;
   background-color: #EEE;
   height: 400px;

@@ -1,3 +1,4 @@
+// Atualização em DesktopIcons.tsx
 import React, { useRef } from "react";
 import { openModal } from "../Modal/Modal";
 
@@ -8,24 +9,27 @@ export interface IconProps {
   top: number;
   left: number;
   url?: string;
-  type?: 'folder' | 'route' | 'external';
+  type?: "folder" | "route" | "external";
   content?: string;
+  isInModal?: boolean;
 }
 
 const DesktopIcon = (icon: IconProps) => {
   const iconRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (event: React.MouseEvent) => {
+    if (icon.isInModal) return; // ← desativa arrastar se estiver em modal
+
     event.preventDefault();
     const parent = iconRef.current?.parentElement;
-    const shiftX = event.clientX - iconRef.current!.getBoundingClientRect().left;
+    const shiftX =
+      event.clientX - iconRef.current!.getBoundingClientRect().left;
     const shiftY = event.clientY - iconRef.current!.getBoundingClientRect().top;
 
     const moveAt = (pageX: number, pageY: number) => {
       if (!parent) return;
 
-      const parentRect = parent.getBoundingClientRect()
-
+      const parentRect = parent.getBoundingClientRect();
       let newLeft = pageX - shiftX - parentRect.left;
       let newTop = pageY - shiftY - parentRect.top;
 
@@ -41,24 +45,19 @@ const DesktopIcon = (icon: IconProps) => {
       iconRef.current!.style.top = newTop + "px";
     };
 
-    const onMouseMove = (event: MouseEvent) => {
-      moveAt(event.pageX, event.pageY);
-    };
-
+    const onMouseMove = (event: MouseEvent) => moveAt(event.pageX, event.pageY);
     document.addEventListener("mousemove", onMouseMove);
 
     iconRef.current!.addEventListener(
       "mouseup",
-      () => {
-        document.removeEventListener("mousemove", onMouseMove);
-      },
+      () => document.removeEventListener("mousemove", onMouseMove),
       { once: true }
     );
   };
 
   const handleDoubleClick = () => {
-    if (icon.type === 'external' && icon.url) {
-      window.open(icon.url, '_blank');
+    if (icon.type === "external" && icon.url) {
+      window.open(icon.url, "_blank");
     } else {
       openModal(icon);
     }
@@ -69,7 +68,16 @@ const DesktopIcon = (icon: IconProps) => {
       ref={iconRef}
       className="icon"
       id={icon.id}
-      style={{ top: `${icon.top}px`, left: `${icon.left}px` }}
+      title={icon.name}
+      style={
+        icon.isInModal
+          ? {}
+          : {
+              top: `${icon.top}px`,
+              left: `${icon.left}px`,
+              position: "absolute",
+            }
+      }
       onMouseDown={handleMouseDown}
       onDoubleClick={handleDoubleClick}
     >
