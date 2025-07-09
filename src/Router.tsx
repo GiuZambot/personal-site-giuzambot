@@ -12,6 +12,8 @@ const Game = lazy(() => import("./widgets/GodotGame/GodotGame"));
 
 const Musics = lazy(() => import("./screens/Music/Music"));
 
+const Bio = lazy(() => import("./screens/Bio/Bio"));
+
 export default function Router() {
   return (
     <Suspense fallback={<LoadingSpin />}>
@@ -25,6 +27,7 @@ export default function Router() {
             element={<ProfileGame className="profileGame" />}
           />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/bio" element={<Bio />} />
         </Routes>
       </BrowserRouter>
     </Suspense>
