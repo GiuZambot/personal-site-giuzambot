@@ -12,12 +12,15 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.16.0",
+    "@tsparticles/react": "^3.0.0",
     "antd": "^5.19.3",
     "quantaui": "^0.0.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.25.1",
-    "react-unity-webgl": "^9.5.2"
+    "react-tsparticles": "^2.12.2",
+    "react-unity-webgl": "^9.5.2",
+    "tsparticles": "^3.8.1"
   },
   "devDependencies": {
     "@types/dom-speech-recognition": "^0.0.4",

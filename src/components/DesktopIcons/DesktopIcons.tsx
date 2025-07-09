@@ -6,8 +6,8 @@ export interface IconProps {
   id: string;
   name: string;
   img: string;
-  top: number;
-  left: number;
+  top?: number;
+  left?: number;
   url?: string;
   type?: "folder" | "route" | "external";
   content?: string;
@@ -73,9 +73,7 @@ const DesktopIcon = (icon: IconProps) => {
         icon.isInModal
           ? {}
           : {
-              top: `${icon.top}px`,
-              left: `${icon.left}px`,
-              position: "absolute",
+              position: "relative",
             }
       }
       onMouseDown={handleMouseDown}

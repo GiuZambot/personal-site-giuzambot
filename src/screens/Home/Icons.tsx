@@ -1,8 +1,12 @@
+import almatter from "../../assets/alma.png";
 import Capib from "../../assets/capib.png";
-import Github from "../../assets/github.svg";
-import Jep from "../../assets/jep.svg";
-import LinkedIn from "../../assets/linkedin.svg";
-import almatter from "../../assets/logo_almatter48x48.png";
+import GameIcon from "../../assets/chapeu.png";
+import Github from "../../assets/github.png";
+import GrimoireIcon from "../../assets/grimorio.png";
+import LinkedIn from "../../assets/likedin.png";
+import GiuIcon from "../../assets/mulher.png";
+import Jep from "../../assets/simbolo.png";
+import Vela from "../../assets/vela.png";
 import Youtube from "../../assets/youtube.svg";
 import { IconProps } from "../../components/DesktopIcons/DesktopIcons";
 
@@ -26,6 +30,17 @@ export const myGames: IconProps[] = [
     top: 130,
     left: 20,
     url: "/games/island",
+  },
+];
+
+export const grimoireIcons: IconProps[] = [
+  {
+    id: "Jep",
+    name: "JEP",
+    img: Jep,
+    top: 30,
+    left: 20,
+    url: "https://jep.vercel.app/",
   },
 ];
 
@@ -237,56 +252,51 @@ const initialPosition = 100;
 
 export const defaultIcons: IconProps[] = [
   {
-    id: "Games",
-    name: "My Games",
-    img: Capib,
-    top: initialPosition,
-    left: 30,
-    type: "folder",
-    content: "myGames",
-  },
-  {
-    id: "Musics",
-    name: "My Musics",
-    img: Youtube,
-    top: initialPosition + 100,
-    left: 30,
-    type: "folder",
-    content: "myMusics",
+    id: "bio",
+    name: "Biografia",
+    img: GiuIcon,
+    url: "/bio",
   },
   {
     id: "almatter",
-    name: "almatter games",
+    name: "Almatter",
     img: almatter,
-    top: initialPosition + 200,
-    left: 30,
-    url: "https://almatter.com.br/",
+    url: "https://almatter.vercel.app/",
   },
   {
     id: "LinkedIn",
     name: "LinkedIn",
     img: LinkedIn,
-    top: initialPosition + 300,
-    left: 30,
     type: "external",
     url: "https://www.linkedin.com/in/giuzambot",
+  },
+  {
+    id: "Games",
+    name: "Games",
+    img: GameIcon,
+    type: "folder",
+    content: "myGames",
+  },
+  {
+    id: "Musics",
+    name: "Music",
+    img: Vela,
+    type: "folder",
+    content: "myMusics",
   },
   {
     id: "GitHub",
     name: "GitHub",
     img: Github,
-    top: initialPosition + 400,
-    left: 30,
     type: "external",
     url: "https://github.com/giuzambot",
   },
   {
-    id: "Jep",
-    name: "JEP",
-    img: Jep,
-    top: initialPosition + 500,
-    left: 30,
-    url: "https://jep.vercel.app/",
+    id: "Grimorio",
+    name: "Grimório",
+    img: GrimoireIcon,
+    type: "folder",
+    content: "grimoireIcons",
   },
 ];
 
@@ -294,4 +304,5 @@ export const iconsMap: IconsMap = {
   myGames,
   myMusics,
   defaultIcons,
+  grimoireIcons,
 };

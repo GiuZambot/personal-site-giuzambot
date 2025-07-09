@@ -18,7 +18,7 @@ export default function Router() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/music/:id" element={<Musics />} />
+          <Route path="/music" element={<Musics />} />
           <Route path="/games/cooking" element={<Game />} />
           <Route
             path="/games/island"
