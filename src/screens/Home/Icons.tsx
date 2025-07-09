@@ -248,8 +248,6 @@ export const myMusics: IconProps[] = [
   },
 ];
 
-const initialPosition = 100;
-
 export const defaultIcons: IconProps[] = [
   {
     id: "bio",
