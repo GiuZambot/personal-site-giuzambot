@@ -1,25 +1,28 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from "react";
 // import { GoogleGenerativeAI } from "@google/generative-ai";
-import Capib from '../../assets/capib.png'
-import CapibMouth from '../../assets/capib-mouth.png'
+import CapibMouth from "../../assets/capib-mouth.png";
+import Capib from "../../assets/capib.png";
 
 // const API_KEY = "";
 // const genAI = new GoogleGenerativeAI(API_KEY);
 // const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 // const chat = model.startChat();
-let voices: SpeechSynthesisVoice[] = []
+let voices: SpeechSynthesisVoice[] = [];
 
 const Bibi = () => {
   const [responses, setResponses] = useState<string[]>([]);
-  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
-  const listeningRef = useRef<boolean>(false)
+  const [recognition, setRecognition] = useState<SpeechRecognition | null>(
+    null
+  );
+  const listeningRef = useRef<boolean>(false);
   const mouthRef = useRef<HTMLImageElement | null>(null);
   const widgetRef = useRef<HTMLDivElement | null>(null);
   // const inputRef = useRef<HTMLInputElement | null>(null);
   const animationIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const initializeSpeechRecognition = () => {
-    const SpeechRecognitionClass = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const SpeechRecognitionClass =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SpeechRecognitionClass) {
       console.error("Speech Recognition API not supported in this browser.");
       return;
@@ -32,7 +35,10 @@ const Bibi = () => {
       //const response = await sendToAPI(speechToText);
       //addResponse(response);
       //textToSpeech(response);
-      textToSpeech("Desculpe, ainda estou aprendendo a falar, mas você disse: " + speechToText);
+      textToSpeech(
+        "Desculpe, ainda estou aprendendo a falar, mas você disse: " +
+          speechToText
+      );
     };
 
     recognitionInstance.onerror = (event: SpeechRecognitionErrorEvent) => {
@@ -49,13 +55,15 @@ const Bibi = () => {
 
   useEffect(() => {
     const loadVoices = () => {
-      voices = window.speechSynthesis.getVoices()
+      voices = window.speechSynthesis.getVoices();
     };
 
     loadVoices();
 
-    window.speechSynthesis.onvoiceschanged = function () { loadVoices(); }
-    initializeSpeechRecognition()
+    window.speechSynthesis.onvoiceschanged = function () {
+      loadVoices();
+    };
+    initializeSpeechRecognition();
   }, []);
 
   useEffect(() => {
@@ -98,11 +106,12 @@ const Bibi = () => {
   const getRandomDuration = (): string => {
     const minDuration = 0.3;
     const maxDuration = 1.5;
-    return (Math.random() * (maxDuration - minDuration) + minDuration) + 's';
+    return Math.random() * (maxDuration - minDuration) + minDuration + "s";
   };
 
   const startRandomAnimation = () => {
-    if (animationIntervalRef.current) clearInterval(animationIntervalRef.current);
+    if (animationIntervalRef.current)
+      clearInterval(animationIntervalRef.current);
     animationIntervalRef.current = setInterval(() => {
       const newDuration = getRandomDuration();
       if (mouthRef.current) {
@@ -112,9 +121,10 @@ const Bibi = () => {
   };
 
   const stopRandomAnimation = () => {
-    if (animationIntervalRef.current) clearInterval(animationIntervalRef.current);
+    if (animationIntervalRef.current)
+      clearInterval(animationIntervalRef.current);
     if (mouthRef.current) {
-      mouthRef.current.style.animationDuration = '';
+      mouthRef.current.style.animationDuration = "";
     }
   };
 
@@ -128,7 +138,6 @@ const Bibi = () => {
   //   const text = await response.text();
   //   return text;
   // };
-
 
   const startSpeechRecognition = () => {
     if (recognition && !listeningRef.current) {
@@ -185,15 +194,30 @@ const Bibi = () => {
           <div className="eyelid"></div>
         </div>
         <img src={Capib} alt="Capybara" id="capybara-img" />
-        <img src={CapibMouth} className="capybara-mouth" alt="Capybara Mouth" id="capybara-mouth" ref={mouthRef} />
+        <img
+          src={CapibMouth}
+          className="capybara-mouth"
+          alt="Capybara Mouth"
+          id="capybara-mouth"
+          ref={mouthRef}
+        />
       </div>
-      <span className='capib-tip'>Tecle espaço e fale ao microfone</span>
+      <span className="capib-tip">
+        Capivara ouvindo... segure a barra de espaço e fale comigo 🧠🎙️
+      </span>
       {/* <input type="text" id="input-text" placeholder="Type a message" ref={inputRef} onKeyDown={handleKeyDown} /> */}
       <div id="responses">
         {responses.map((response, index) => (
           <div key={index} className="response-bubble">
             {response}
-            <span className="close-btn" onClick={() => setResponses(responses.filter((_, i) => i !== index))}>X</span>
+            <span
+              className="close-btn"
+              onClick={() =>
+                setResponses(responses.filter((_, i) => i !== index))
+              }
+            >
+              X
+            </span>
           </div>
         ))}
       </div>

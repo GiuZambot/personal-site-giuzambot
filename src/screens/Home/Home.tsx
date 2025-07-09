@@ -1,51 +1,49 @@
+import { Layout } from "antd";
+import { useEffect, useRef } from "react";
 import Battery from "../../assets/battery.svg";
-import Bibi from "../../components/Bibi/Bibi";
 import Chevron from "../../assets/chevron-up.svg";
-import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
 import Logo from "../../assets/logo.svg";
 import Notification from "../../assets/notification.svg";
 import Search from "../../assets/search.svg";
 import Sound from "../../assets/sound-max.svg";
 import wallpaper from "../../assets/wallpaper.gif";
-import { defaultIcons } from "./Icons";
-import { Layout } from "antd";
-import { updateClock } from "./methods";
-import { useEffect, useRef } from "react";
+import Bibi from "../../components/Bibi/Bibi";
+import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
 import "./Home.css";
+import { defaultIcons } from "./Icons";
+import { updateClock } from "./methods";
 
 export default function Home() {
-  const clock = useRef<HTMLDivElement>(null)
+  const clock = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout
+    let timer: NodeJS.Timeout;
     if (clock.current !== null) {
-      timer = setInterval(() => updateClock(clock.current!), 1000)
+      timer = setInterval(() => updateClock(clock.current!), 1000);
     }
 
     return () => {
-      clearInterval(timer)
-    }
-  }, [])
+      clearInterval(timer);
+    };
+  }, []);
 
   return (
     <Layout.Content>
       <div className="windows">
-        <div id="desktop"
+        <div
+          id="desktop"
           style={{
             background: `url(${wallpaper}) no-repeat center center`,
-            backgroundSize: '100% 100%',
+            backgroundSize: "100% 100%",
           }}
         >
-          <div className="site-title">
-            <h1>Giu Zambot</h1>
-            <p>Games and Codes</p>
-          </div>
-          {defaultIcons.map(icon => (
+          {defaultIcons.map((icon) => (
             <DesktopIcon key={icon.id} {...icon} />
           ))}
           <Bibi />
-          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          </div>
+          <div
+            style={{ display: "flex", justifyContent: "space-around" }}
+          ></div>
         </div>
         <div id="taskbar">
           <div id="start-button">
@@ -74,5 +72,5 @@ export default function Home() {
         </div>
       </div>
     </Layout.Content>
-  )
+  );
 }

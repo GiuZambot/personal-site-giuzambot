@@ -1,5 +1,7 @@
 import Capib from "../../assets/capib.png";
+import GameIcon from "../../assets/game.png";
 import Github from "../../assets/github.svg";
+import GiuIcon from "../../assets/giu.png";
 import Jep from "../../assets/jep.svg";
 import LinkedIn from "../../assets/linkedin.svg";
 import almatter from "../../assets/logo_almatter48x48.png";
@@ -237,36 +239,44 @@ const initialPosition = 100;
 
 export const defaultIcons: IconProps[] = [
   {
-    id: "Games",
-    name: "My Games",
-    img: Capib,
+    id: "almatter",
+    name: "Almatter",
+    img: almatter,
     top: initialPosition,
+    left: 30,
+    url: "https://almatter.com.br/",
+  },
+  {
+    id: "Games",
+    name: "Games",
+    img: GameIcon,
+    top: initialPosition + 100,
     left: 30,
     type: "folder",
     content: "myGames",
   },
   {
     id: "Musics",
-    name: "My Musics",
+    name: "Music",
     img: Youtube,
-    top: initialPosition + 100,
+    top: initialPosition + 200,
     left: 30,
     type: "folder",
     content: "myMusics",
   },
   {
-    id: "almatter",
-    name: "almatter games",
-    img: almatter,
-    top: initialPosition + 200,
+    id: "bio",
+    name: "Biografia",
+    img: GiuIcon,
+    top: initialPosition + 300,
     left: 30,
-    url: "https://almatter.com.br/",
+    url: "/bio",
   },
   {
     id: "LinkedIn",
     name: "LinkedIn",
     img: LinkedIn,
-    top: initialPosition + 300,
+    top: initialPosition + 400,
     left: 30,
     type: "external",
     url: "https://www.linkedin.com/in/giuzambot",
@@ -275,7 +285,7 @@ export const defaultIcons: IconProps[] = [
     id: "GitHub",
     name: "GitHub",
     img: Github,
-    top: initialPosition + 400,
+    top: initialPosition + 500,
     left: 30,
     type: "external",
     url: "https://github.com/giuzambot",
@@ -284,7 +294,7 @@ export const defaultIcons: IconProps[] = [
     id: "Jep",
     name: "JEP",
     img: Jep,
-    top: initialPosition + 500,
+    top: initialPosition + 600,
     left: 30,
     url: "https://jep.vercel.app/",
   },
