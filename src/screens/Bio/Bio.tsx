@@ -222,6 +222,14 @@ export default function Bio() {
           >
             💬 Fale comigo no WhatsApp
           </a>
+          <a
+            href="https://www.instagram.com/giuzambot/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="instagram-button"
+          >
+            Ver Instagram
+          </a>
         </div>
       </div>
     </div>
