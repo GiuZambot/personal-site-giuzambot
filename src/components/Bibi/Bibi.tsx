@@ -155,7 +155,7 @@ const Bibi = () => {
           ref={mouthRef}
         />
       </div>
-      <button>Olá!</button>
+      <button onClick={startSpeechRecognition}>Olá!</button>
 
       {/* <input type="text" id="input-text" placeholder="Type a message" ref={inputRef} onKeyDown={handleKeyDown} /> */}
       <div id="responses">
