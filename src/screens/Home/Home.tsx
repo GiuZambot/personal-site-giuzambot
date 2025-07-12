@@ -43,7 +43,7 @@ export default function Home() {
         <Bat />
         <div id="desktop">
           {defaultIcons.map((icon, i) => (
-            <DesktopIcon key={icon.id} top={i * 100 + 20} {...icon} />
+            <DesktopIcon key={icon.id} top={i * 100 + 10} {...icon} />
           ))}
           <Bibi />
         </div>
