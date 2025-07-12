@@ -4,7 +4,6 @@ import Battery from "../../assets/battery.svg";
 import Chevron from "../../assets/chevron-up.svg";
 import wallpaper from "../../assets/fundo.png";
 import Logo from "../../assets/logo.svg";
-import Microphone from "../../assets/microbranco.png";
 import Notification from "../../assets/notification.svg";
 import Search from "../../assets/search.svg";
 import Bat from "../../components/Bat/Bat";
@@ -62,6 +61,7 @@ export default function Home() {
               <img src={Search} alt="search-icon" id="search-icon" />
               <input type="text" placeholder="Pesquisar" id="search-input" />
             </div>
+            <div id="open-windows"></div>
           </div>
           <div id="taskbar-icons">
             <div id="chevron-icon" className="taskbar-icon">
@@ -73,17 +73,6 @@ export default function Home() {
             <div id="clock" ref={clock}></div>
             <div id="notification-icon" className="taskbar-icon">
               <img src={Notification} alt="Notifications" />
-            </div>
-            {/* New Microphone Button */}
-            <div
-              className="taskbar-icon microphone-button-container"
-              onClick={startSpeechRecognition}
-            >
-              <img
-                src={Microphone}
-                alt="Microphone"
-                className="microphone-icon"
-              />
             </div>
           </div>
         </div>
