@@ -6,6 +6,7 @@ import wallpaper from "../../assets/fundo.png";
 import Logo from "../../assets/logo.svg";
 import Notification from "../../assets/notification.svg";
 import Search from "../../assets/search.svg";
+import Sound from "../../assets/sound-max.svg";
 import Bat from "../../components/Bat/Bat";
 import Bibi from "../../components/Bibi/Bibi";
 import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
@@ -14,12 +15,6 @@ import Witch from "../../components/Witch/Witch";
 import "./Home.css";
 import { defaultIcons } from "./Icons";
 import { updateClock } from "./methods";
-
-// Placeholder for the startSpeechRecognition function
-const startSpeechRecognition = () => {
-  console.log("Speech recognition started!");
-  // In a real application, this would initiate speech recognition
-};
 
 export default function Home() {
   const clock = useRef<HTMLDivElement>(null);
@@ -69,6 +64,9 @@ export default function Home() {
             </div>
             <div id="battery-icon" className="taskbar-icon">
               <img src={Battery} alt="Battery" />
+            </div>
+            <div id="volume-icon" className="taskbar-icon">
+              <img src={Sound} alt="Volume" />
             </div>
             <div id="clock" ref={clock}></div>
             <div id="notification-icon" className="taskbar-icon">
