@@ -1,0 +1,70 @@
+.bat {
+  position: fixed;
+  top: 5%;
+  left: -100px;
+  width: 80px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.animate {
+  opacity: 1;
+  visibility: visible;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.flyLeftToRight {
+  animation-name: flyLeftToRight;
+}
+
+.flyRightToLeft {
+  animation-name: flyRightToLeft;
+}
+
+@keyframes flyLeftToRight {
+  0% {
+    transform: translateX(-10vw) translateY(0vh) scaleX(1);
+  }
+  20% {
+    transform: translateX(20vw) translateY(-2vh) scaleX(1);
+  }
+  40% {
+    transform: translateX(40vw) translateY(1vh) scaleX(1);
+  }
+  60% {
+    transform: translateX(60vw) translateY(-2.5vh) scaleX(1);
+  }
+  80% {
+    transform: translateX(80vw) translateY(0.5vh) scaleX(1);
+  }
+  100% {
+    transform: translateX(110vw) translateY(-1vh) scaleX(1);
+  }
+}
+
+@keyframes flyRightToLeft {
+  0% {
+    left: 110vw;
+    transform: translateX(0) scaleX(-1);
+  }
+  20% {
+    transform: translateX(-20vw) translateY(-2vh) scaleX(-1);
+  }
+  40% {
+    transform: translateX(-40vw) translateY(1vh) scaleX(-1);
+  }
+  60% {
+    transform: translateX(-60vw) translateY(-2.5vh) scaleX(-1);
+  }
+  80% {
+    transform: translateX(-80vw) translateY(0.5vh) scaleX(-1);
+  }
+  100% {
+    transform: translateX(-110vw) translateY(-1vh) scaleX(-1);
+  }
+}

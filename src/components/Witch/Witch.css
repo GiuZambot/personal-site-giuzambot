@@ -1,0 +1,43 @@
+.witch-container {
+  position: absolute;
+  top: 10%;
+  left: 0; /* Changed from -200px to 0 */
+  animation: fly-across 40s linear infinite;
+  z-index: 5;
+}
+
+.witch-bobbing {
+  animation: bobbing 5s ease-in-out infinite;
+}
+
+.witch {
+  width: 150px;
+  height: auto;
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(calc(100vw + 150px)) scaleX(1); /* Start off-screen right, facing left */
+  }
+  49.99% {
+    transform: translateX(-150px) scaleX(1); /* Fly to off-screen left, facing left */
+  }
+  50% {
+    transform: translateX(-150px) scaleX(-1); /* Instantly flip at left edge, facing right */
+  }
+  100% {
+    transform: translateX(calc(100vw + 150px)) scaleX(-1); /* Fly back to off-screen right, facing right */
+  }
+}
+
+@keyframes bobbing {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
