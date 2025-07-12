@@ -13,8 +13,13 @@
   --icon-size-sm: 15px;
 }
 
+html {
+  height: 100%;
+}
+
 #root {
   display: flex;
+  height: 100%;
 }
 
 
@@ -23,6 +28,8 @@ body {
   flex: 1;
   background-color: var(--back_color);
   font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .profileGame {

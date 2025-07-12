@@ -46,11 +46,19 @@ const DesktopIcon = (icon: IconProps) => {
     };
 
     const onMouseMove = (event: MouseEvent) => moveAt(event.pageX, event.pageY);
+    const onTouchMove = (event: TouchEvent) =>
+      moveAt(event.touches[0].pageX, event.touches[0].pageY);
     document.addEventListener("mousemove", onMouseMove);
+    document.addEventListener("touchmove", onTouchMove);
 
     iconRef.current!.addEventListener(
       "mouseup",
       () => document.removeEventListener("mousemove", onMouseMove),
+      { once: true }
+    );
+    iconRef.current!.addEventListener(
+      "touchend",
+      () => document.removeEventListener("touchmove", onMouseMove),
       { once: true }
     );
   };
