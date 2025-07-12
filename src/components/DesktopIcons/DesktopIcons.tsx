@@ -58,7 +58,7 @@ const DesktopIcon = (icon: IconProps) => {
     );
     iconRef.current!.addEventListener(
       "touchend",
-      () => document.removeEventListener("touchmove", onMouseMove),
+      () => document.removeEventListener("touchmove", onTouchMove),
       { once: true }
     );
   };
@@ -81,7 +81,9 @@ const DesktopIcon = (icon: IconProps) => {
         icon.isInModal
           ? {}
           : {
-              position: "relative",
+              top: `${icon.top}px`,
+              left: `${icon.left}px`,
+              position: "absolute",
             }
       }
       onMouseDown={handleMouseDown}
