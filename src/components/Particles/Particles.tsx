@@ -19,7 +19,7 @@ const ParticlesComponent = () => {
   };
 
   const options = {
-    fullScreen: { enable: true, zIndex: 0 },
+    fullScreen: { enable: true, zIndex: 1 },
     particles: {
       number: { value: 30 },
       color: { value: "#FFD580" },

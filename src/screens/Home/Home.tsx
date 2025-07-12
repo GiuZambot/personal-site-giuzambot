@@ -7,9 +7,11 @@ import Logo from "../../assets/logo.svg";
 import Notification from "../../assets/notification.svg";
 import Search from "../../assets/search.svg";
 import Sound from "../../assets/sound-max.svg";
+import Bat from "../../components/Bat/Bat";
 import Bibi from "../../components/Bibi/Bibi";
 import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
 import ParticlesComponent from "../../components/Particles/Particles";
+import Witch from "../../components/Witch/Witch";
 import "./Home.css";
 import { defaultIcons } from "./Icons";
 import { updateClock } from "./methods";
@@ -37,19 +39,19 @@ export default function Home() {
           backgroundSize: "cover",
         }}
       >
+        <Witch />
+        <Bat />
         <div id="desktop">
-          <ParticlesComponent />
-          {defaultIcons.map((icon) => (
-            <DesktopIcon key={icon.id} {...icon} />
+          {defaultIcons.map((icon, i) => (
+            <DesktopIcon key={icon.id} top={i * 100 + 20} {...icon} />
           ))}
           <Bibi />
-          <div
-            style={{ display: "flex", justifyContent: "space-around" }}
-          ></div>
         </div>
         <div id="taskbar">
-          <div id="start-button">
-            <img src={Logo} alt="start-button" id="start-button-img" />
+          <div className="taskbar-left">
+            <div id="start-button">
+              <img src={Logo} alt="start-button" id="start-button-img" />
+            </div>
             <div id="search-bar">
               <img src={Search} alt="search-icon" id="search-icon" />
               <input type="text" placeholder="Pesquisar" id="search-input" />
@@ -73,6 +75,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <ParticlesComponent />
     </Layout.Content>
   );
 }

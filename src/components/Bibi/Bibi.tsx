@@ -117,15 +117,6 @@ const Bibi = () => {
   //   }
   // };
 
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "Space") {
-      // if (!recognition) {
-      //   initializeSpeechRecognition();
-      // }
-      startSpeechRecognition();
-    }
-  });
-
   const textToSpeech = (text: string) => {
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = "pt-BR";
@@ -164,11 +155,8 @@ const Bibi = () => {
           ref={mouthRef}
         />
       </div>
-      <span className="capybara-message">
-        Capivara mágica ouvindo...
-        <br />
-        Segure a barra de espaço e fale comigo!
-      </span>
+      <button onClick={startSpeechRecognition}>Olá!</button>
+
       {/* <input type="text" id="input-text" placeholder="Type a message" ref={inputRef} onKeyDown={handleKeyDown} /> */}
       <div id="responses">
         {responses.map((response, index) => (
