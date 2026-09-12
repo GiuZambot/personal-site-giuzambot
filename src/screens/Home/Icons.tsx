@@ -1,10 +1,20 @@
-import Capib from "../../assets/capib.png";
-import Github from "../../assets/github.svg";
-import Jep from "../../assets/jep.svg";
-import LinkedIn from "../../assets/linkedin.svg";
-import almatter from "../../assets/logo_almatter48x48.png";
+import almatter from "../../assets/optimized/alma.webp";
+import Capib from "../../assets/optimized/capib.webp";
+import DiaryIcon from "../../assets/optimized/diario-de-bordo.webp";
+import CardEvolution from "../../assets/games/card-evolution.webp";
+import Exodus from "../../assets/games/exodus.webp";
+import ReturnedVesperNetwork from "../../assets/games/returned-vesper-network.webp";
+import SavingCapybaras from "../../assets/games/saving-capybaras.webp";
+import SpaceNomadEchoes from "../../assets/games/space-nomad-echoes.webp";
+import SpaceRunner from "../../assets/games/space-runner.webp";
+import GameIcon from "../../assets/optimized/chapeu.webp";
+import Github from "../../assets/optimized/github.webp";
+import LinkedIn from "../../assets/optimized/likedin.webp";
+import GiuIcon from "../../assets/optimized/mulher.webp";
+import Vela from "../../assets/optimized/vela.webp";
 import Youtube from "../../assets/youtube.svg";
-import { IconProps } from "../../components/DesktopIcons/DesktopIcons";
+import type { IconProps } from "../../components/DesktopIcons/DesktopIcons";
+import { articles } from "../../content/articles";
 
 interface IconsMap {
   [key: string]: IconProps[];
@@ -12,285 +22,162 @@ interface IconsMap {
 
 export const myGames: IconProps[] = [
   {
-    id: "game-cooking",
-    name: "Cooking(in develop)",
-    img: Capib,
-    top: 30,
-    left: 20,
-    url: "games/cooking",
+    id: "game-returned-vesper-network",
+    name: "Returned: Vesper Network",
+    img: ReturnedVesperNetwork,
+    url: "https://almatter.com.br/pt-BR/games/returned-vesper-network",
+    type: "external",
+  },
+  {
+    id: "game-exodus",
+    name: "Exodus",
+    img: Exodus,
+    url: "https://almatter.com.br/pt-BR/games/exodus",
+    type: "external",
+  },
+  {
+    id: "game-saving-capybaras",
+    name: "Saving Capybaras",
+    img: SavingCapybaras,
+    url: "https://almatter.com.br/pt-BR/games/saving-capybaras",
+    type: "external",
+  },
+  {
+    id: "game-space-runner",
+    name: "Space Runner",
+    img: SpaceRunner,
+    url: "https://almatter.com.br/pt-BR/games/space-runner",
+    type: "external",
+  },
+  {
+    id: "game-space-nomad-echoes",
+    name: "Space Nomad Echoes",
+    img: SpaceNomadEchoes,
+    url: "https://almatter.com.br/pt-BR/games/space-nomad-echoes",
+    type: "external",
+  },
+  {
+    id: "game-card-evolution",
+    name: "Card Evolution",
+    img: CardEvolution,
+    url: "https://almatter.com.br/pt-BR/games/card-evolution",
+    type: "external",
   },
   {
     id: "profile-game",
-    name: "Island Alone (old site home)",
+    name: "Island Alone — clássico",
     img: Capib,
-    top: 130,
-    left: 20,
     url: "/games/island",
+    type: "external",
   },
 ];
 
-let musicId = 1;
-export const myMusics: IconProps[] = [
-  {
-    id: `music-${musicId++}`,
-    name: "Branches of the Immortal Tree",
-    img: Youtube,
-    top: 20,
-    left: 20,
-    url: "music/2n-rhIH5pEo",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Your Shadow, My Light",
-    img: Youtube,
-    top: 120,
-    left: 20,
-    url: "music/rkYC6a7p9rg",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Break the Pattern - Silesia",
-    img: Youtube,
-    top: 220,
-    left: 20,
-    url: "music/tmnX10F8lPo",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Sunshine Jump",
-    img: Youtube,
-    top: 20,
-    left: 120,
-    url: "music/Q1GrtFi-QPo",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Awaken the Dreamer",
-    img: Youtube,
-    top: 120,
-    left: 120,
-    url: "music/5vd9CNyZD-M",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Ghost in the code",
-    img: Youtube,
-    top: 220,
-    left: 120,
-    url: "music/SgDvlWynW3I",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Side by side",
-    img: Youtube,
-    top: 20,
-    left: 220,
-    url: "music/y4NR2cm0mOg",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Rise and Conquer",
-    img: Youtube,
-    top: 120,
-    left: 220,
-    url: "music/Gm115Jdd0D8",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Melhor amiga",
-    img: Youtube,
-    top: 220,
-    left: 220,
-    url: "music/q7fVuCqZFeg",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Becoming the destroyer",
-    img: Youtube,
-    top: 20,
-    left: 320,
-    url: "music/whDS8XM8N4Y",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Echoes of Freedom",
-    img: Youtube,
-    top: 120,
-    left: 320,
-    url: "music/qrb5qi4Gqpc",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "The treasure",
-    img: Youtube,
-    top: 220,
-    left: 320,
-    url: "music/8_2_3zIMBbU",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Eternal",
-    img: Youtube,
-    top: 20,
-    left: 420,
-    url: "music/4Duax63ZuZQ",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Embrace the tide",
-    img: Youtube,
-    top: 120,
-    left: 420,
-    url: "music/tQeBrOqEF-c",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "I Feel Good",
-    img: Youtube,
-    top: 220,
-    left: 420,
-    url: "music/zjWCih6ucfA",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Not Me Anymore",
-    img: Youtube,
-    top: 20,
-    left: 20,
-    url: "music/LRnBs2us548",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Hope's Horizon",
-    img: Youtube,
-    top: 120,
-    left: 20,
-    url: "music/oIopgGnM1LM",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Acceptance Blooms",
-    img: Youtube,
-    top: 220,
-    left: 20,
-    url: "music/uh4rzTqsqfw",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Dancing to the end",
-    img: Youtube,
-    top: 20,
-    left: 120,
-    url: "music/fb_YBcE-OLU",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Ephemeral Waltz",
-    img: Youtube,
-    top: 120,
-    left: 120,
-    url: "music/rtyAvbZYG4U",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "In Case of Love",
-    img: Youtube,
-    top: 220,
-    left: 120,
-    url: "music/2J1DCHrxr38",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Let Go Their Whispers",
-    img: Youtube,
-    top: 20,
-    left: 220,
-    url: "music/ZRD4XSwTY98",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Endless Ocean of Life",
-    img: Youtube,
-    top: 120,
-    left: 220,
-    url: "music/jk_JipWv9tw",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Wounded Sky",
-    img: Youtube,
-    top: 220,
-    left: 220,
-    url: "music/HIDDEN_VIDEO_ID_1",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Aether's Calling",
-    img: Youtube,
-    top: 20,
-    left: 320,
-    url: "music/HIDDEN_VIDEO_ID_2",
-  },
-];
+const musicVideos = [
+  ["ZW3dYkdJyY0", "Ainda é hoje"],
+  ["LnJ1Q0Zzc1o", "Ode to Myself"],
+  ["KsmwH3lm8Io", "Manifest in Motion"],
+  ["2n-rhIH5pEo", "Branches of the Immortal Tree"],
+  ["rkYC6a7p9rg", "Your Shadow, My Light"],
+  ["tmnX10F8lPo", "Break the Pattern"],
+  ["Q1GrtFi-QPo", "Sunshine Jump"],
+  ["5vd9CNyZD-M", "Awaken the Dreamer"],
+  ["SgDvlWynW3I", "Ghost in the Code"],
+  ["y4NR2cm0mOg", "Side by Side"],
+  ["Gm115Jdd0D8", "Rise and Conquer"],
+  ["q7fVuCqZFeg", "Melhor Amiga"],
+  ["whDS8XM8N4Y", "Becoming the Destroyer"],
+  ["qrb5qi4Gqpc", "Echoes of Freedom"],
+  ["8_2_3zIMBbU", "The Treasure"],
+  ["4Duax63ZuZQ", "Eternal"],
+  ["tQeBrOqEF-c", "Embrace the Tide"],
+  ["zjWCih6ucfA", "I Feel Good"],
+  ["aHVHXshuEw0", "Not Me Anymore 3"],
+  ["LRnBs2us548", "Not Me Anymore 2"],
+  ["9boAh2l7a9o", "Not Me Anymore 1"],
+  ["oIopgGnM1LM", "Hope's Horizon"],
+  ["uh4rzTqsqfw", "Acceptance Blooms"],
+  ["fb_YBcE-OLU", "Dancing to the End"],
+  ["rtyAvbZYG4U", "Ephemeral Waltz"],
+  ["2J1DCHrxr38", "In Case of Love"],
+  ["ZRD4XSwTY98", "Let Go Their Whispers"],
+  ["jk_JipWv9tw", "Endless Ocean of Life"],
+] as const;
 
-const initialPosition = 100;
+export const myMusics: IconProps[] = musicVideos.map(
+  ([videoId, name], index) => ({
+    id: `music-${index + 1}`,
+    name,
+    img: Youtube,
+    url: `/music/${videoId}`,
+    type: "route",
+  }),
+);
+
+const articleImages = [GameIcon, Capib, GiuIcon];
+
+export const myArticles: IconProps[] = articles.map((article, index) => ({
+  id: `article-${article.slug}`,
+  name: article.shortTitle,
+  img: articleImages[index % articleImages.length],
+  url: `/artigos/${article.slug}`,
+  type: "route",
+}));
 
 export const defaultIcons: IconProps[] = [
   {
-    id: "Games",
-    name: "My Games",
-    img: Capib,
-    top: initialPosition,
-    left: 30,
-    type: "folder",
-    content: "myGames",
-  },
-  {
-    id: "Musics",
-    name: "My Musics",
-    img: Youtube,
-    top: initialPosition + 100,
-    left: 30,
-    type: "folder",
-    content: "myMusics",
+    id: "bio",
+    name: "Biografia",
+    img: GiuIcon,
+    url: "/bio",
+    type: "route",
   },
   {
     id: "almatter",
-    name: "almatter games",
+    name: "Almatter",
     img: almatter,
-    top: initialPosition + 200,
-    left: 30,
-    url: "https://almatter.com.br/",
+    type: "external",
+    url: "https://almatter.com.br/pt-BR/games",
   },
   {
     id: "LinkedIn",
     name: "LinkedIn",
     img: LinkedIn,
-    top: initialPosition + 300,
-    left: 30,
     type: "external",
     url: "https://www.linkedin.com/in/giuzambot",
+  },
+  {
+    id: "Games",
+    name: "Games",
+    img: GameIcon,
+    type: "folder",
+    content: "myGames",
+  },
+  {
+    id: "Musics",
+    name: "Music",
+    img: Vela,
+    type: "folder",
+    content: "myMusics",
+  },
+  {
+    id: "Articles",
+    name: "Diário de Bordo",
+    img: DiaryIcon,
+    type: "folder",
+    url: "/artigos",
+    content: "myArticles",
   },
   {
     id: "GitHub",
     name: "GitHub",
     img: Github,
-    top: initialPosition + 400,
-    left: 30,
     type: "external",
     url: "https://github.com/giuzambot",
-  },
-  {
-    id: "Jep",
-    name: "JEP",
-    img: Jep,
-    top: initialPosition + 500,
-    left: 30,
-    url: "https://jep.vercel.app/",
   },
 ];
 
 export const iconsMap: IconsMap = {
+  myArticles,
   myGames,
   myMusics,
   defaultIcons,

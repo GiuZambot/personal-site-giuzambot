@@ -1,4 +1,3 @@
-import { Layout } from "antd";
 import { useState } from "react";
 import "./PrivacyPolicy.css";
 
@@ -10,7 +9,7 @@ export const PrivacyPolicy = () => {
   };
 
   return (
-    <Layout className="layout">
+    <main className="layout">
       <div className="privacy-policy">
         <div className="language-buttons">
           <button onClick={() => handleLanguageChange("pt")}>
@@ -192,6 +191,6 @@ export const PrivacyPolicy = () => {
           </div>
         )}
       </div>
-    </Layout>
+    </main>
   );
 };

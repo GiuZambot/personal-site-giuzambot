@@ -14,7 +14,7 @@ const Bat = () => {
   useEffect(() => {
     const wingFlapInterval = setInterval(() => {
       setSprite((prevSprite) =>
-        prevSprite === morcego1 ? morcego2 : morcego1
+        prevSprite === morcego1 ? morcego2 : morcego1,
       );
     }, 200);
     return () => clearInterval(wingFlapInterval);

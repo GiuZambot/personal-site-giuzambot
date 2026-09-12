@@ -1,0 +1,23 @@
+.grimorioContainer {
+  position: relative; /* Needed for absolute positioning of children */
+  width: 64px; /* Set explicit width/height for container */
+  height: 64px;
+  display: inline-block;
+}
+
+.grimorio {
+  position: absolute; /* Position images on top of each other */
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.visible {
+  opacity: 1;
+}
+
+.hidden {
+  opacity: 0;
+}

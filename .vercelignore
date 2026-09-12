@@ -1,0 +1,10 @@
+.git
+.vercel
+.env*
+node_modules
+dist
+dist-ssr
+output
+.playwright-cli
+docs
+*.log

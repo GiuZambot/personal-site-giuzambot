@@ -1,4 +1,3 @@
-import { Row, Spin } from "antd";
 import styles from './index.module.css';
 
 export const LoadingSpin = () => {
@@ -28,9 +27,9 @@ export const LoadingSpin = () => {
   const randomMessage = messages[randomArrIndex];
 
   return (
-    <Row align="middle" justify="center" className={styles.loadingSpinRow} >
-      <Spin size="large" className={styles.spin}></Spin>
+    <div className={styles.loadingSpinRow} role="status" aria-live="polite">
+      <span className={styles.spin} aria-hidden="true"></span>
       <div className={styles.spinMessage}>{randomMessage}</div>
-    </Row>
+    </div>
   )
 }
