@@ -1,18 +1,12 @@
-import witchImage from "../../assets/optimized/bruxinhas.webp";
+import React from "react";
+import witchImage from "../../assets/bruxinhas.png";
 import "./Witch.css";
 
-const Witch = () => {
+const Witch: React.FC = () => {
   return (
     <div className="witch-container">
       <div className="witch-bobbing">
-        <img
-          src={witchImage}
-          alt="Bruxinhas voando"
-          className="witch"
-          width="300"
-          height="450"
-          decoding="async"
-        />
+        <img src={witchImage} alt="Witch" className="witch" />
       </div>
     </div>
   );
