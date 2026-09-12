@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run build:content && tsc && npm run build:client && npm run build:ssr && node scripts/prerender.mjs && node scripts/validate-prerender.mjs",
+    "build:content": "node scripts/generate-sitemap.mjs",
+    "build:client": "vite build",
+    "build:ssr": "vite build --ssr src/entry-server.tsx --outDir dist-ssr",
     "serve": "npm run build && serve -s dist",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

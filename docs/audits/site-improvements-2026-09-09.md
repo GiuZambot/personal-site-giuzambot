@@ -79,12 +79,25 @@ Esse modelo preserva a experiência divertida sem esconder os destinos. Um passo
 - Bibi e Grimório: ausentes da home.
 - Rota inexistente: tela 404 com recuperação para a home.
 - Games: links oficiais individuais verificados para os seis projetos publicados pela Almatter; Island Alone permanece local.
+- Diário de Bordo: o ícone da home é um link real para `/artigos`, mas abre a pasta temática no fluxo normal da home.
+- Artigos: índice desktop, pasta mobile, artigo em janela e leitura direta em 390 x 844 foram verificados sem erros de console.
+- Pré-renderização editorial: a resposta HTML contém texto, canonical, `BlogPosting` e `BreadcrumbList` antes da execução do JavaScript; o build também valida esses contratos automaticamente.
 
 ## Pendências conhecidas
 
 - `npm audit --omit=dev` ainda reporta duas vulnerabilidades moderadas no React Router 6. A correção automática exige React Router 7, uma migração com mudanças incompatíveis. Não foi aplicada à força neste marco.
 - Não existe suíte automatizada do projeto. A validação atual combina TypeScript, lint, Lighthouse e fluxos reais no Chromium.
 - A aceitação visual final e a sensação de diversão ainda dependem de revisão humana em dispositivos reais.
+
+## Diário de Bordo — 12/09/2026
+
+- A home ganhou a pasta semântica “Diário de Bordo”, cujo destino real é `/artigos`.
+- O índice editorial reúne três textos iniciais sobre mecânicas divertidas, produção indie e personalidade com navegabilidade.
+- Cada artigo possui URL própria, autoria, datas, assuntos, links relacionados e ponte contextual para os games da Almatter.
+- O botão “Abrir transmissão aleatória” adiciona descoberta lúdica sem substituir a navegação convencional.
+- O build gera HTML pré-renderizado para o índice e para cada artigo, com canonical, descrição, Open Graph, Twitter Card, `BlogPosting` e `BreadcrumbList`.
+- O sitemap é regenerado a partir da mesma fonte de conteúdo antes de cada build, evitando rotas editoriais esquecidas.
+- Os textos são uma primeira versão editorial e ainda exigem aprovação humana de voz, experiências e posicionamento antes da publicação.
 
 ## Evidências locais
 
@@ -97,5 +110,9 @@ Esse modelo preserva a experiência divertida sem esconder os destinos. Um passo
 - `output/playwright/games-folder-mobile-after.png`
 - `output/playwright/music-channel-synced.png`
 - `output/playwright/music-newest-player.png`
+- `output/playwright/journal-article-window.png`
+- `output/playwright/journal-article-mobile.png`
+- `output/playwright/journal-folder-mobile.png`
+- `output/playwright/journal-index-desktop.png`
 
 `output/` e `.playwright-cli/` estão ignorados pelo Git porque são artefatos reproduzíveis de teste, não código do site.

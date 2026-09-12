@@ -1,7 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
   "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
+    {
+      "source": "/artigos/:slug",
+      "destination": "/artigo-:slug"
+    },
     {
       "source": "/(.*)",
       "destination": "/"

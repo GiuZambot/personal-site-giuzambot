@@ -1,5 +1,6 @@
 import almatter from "../../assets/optimized/alma.webp";
 import Capib from "../../assets/optimized/capib.webp";
+import DiaryIcon from "../../assets/optimized/diario-de-bordo.webp";
 import CardEvolution from "../../assets/games/card-evolution.webp";
 import Exodus from "../../assets/games/exodus.webp";
 import ReturnedVesperNetwork from "../../assets/games/returned-vesper-network.webp";
@@ -13,6 +14,7 @@ import GiuIcon from "../../assets/optimized/mulher.webp";
 import Vela from "../../assets/optimized/vela.webp";
 import Youtube from "../../assets/youtube.svg";
 import type { IconProps } from "../../components/DesktopIcons/DesktopIcons";
+import { articles } from "../../content/articles";
 
 interface IconsMap {
   [key: string]: IconProps[];
@@ -111,6 +113,16 @@ export const myMusics: IconProps[] = musicVideos.map(
   }),
 );
 
+const articleImages = [GameIcon, Capib, GiuIcon];
+
+export const myArticles: IconProps[] = articles.map((article, index) => ({
+  id: `article-${article.slug}`,
+  name: article.shortTitle,
+  img: articleImages[index % articleImages.length],
+  url: `/artigos/${article.slug}`,
+  type: "route",
+}));
+
 export const defaultIcons: IconProps[] = [
   {
     id: "bio",
@@ -148,6 +160,14 @@ export const defaultIcons: IconProps[] = [
     content: "myMusics",
   },
   {
+    id: "Articles",
+    name: "Diário de Bordo",
+    img: DiaryIcon,
+    type: "folder",
+    url: "/artigos",
+    content: "myArticles",
+  },
+  {
     id: "GitHub",
     name: "GitHub",
     img: Github,
@@ -157,6 +177,7 @@ export const defaultIcons: IconProps[] = [
 ];
 
 export const iconsMap: IconsMap = {
+  myArticles,
   myGames,
   myMusics,
   defaultIcons,

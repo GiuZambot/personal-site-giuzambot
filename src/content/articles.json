@@ -1,0 +1,140 @@
+[
+  {
+    "slug": "como-saber-se-uma-mecanica-e-divertida",
+    "title": "Como saber se uma mecânica é realmente divertida",
+    "shortTitle": "Uma mecânica é divertida?",
+    "description": "Um método prático para testar se uma mecânica de jogo gera decisões interessantes, domínio e vontade de tentar mais uma vez.",
+    "eyebrow": "Design de games",
+    "publishedAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "readingTime": "6 min",
+    "tags": ["game design", "mecânicas", "protótipos"],
+    "lead": "Uma mecânica não se torna divertida porque é original, bonita ou difícil de programar. Ela se torna divertida quando cria uma decisão que o jogador quer tomar de novo — e quando a próxima tentativa parece mais promissora que a anterior.",
+    "sections": [
+      {
+        "heading": "A pergunta errada: isso é uma boa ideia?",
+        "paragraphs": [
+          "Ideias são generosas no papel. Quase todas parecem funcionar enquanto ainda não precisam responder ao toque de uma pessoa real. Por isso, tento trocar a pergunta ‘isso é uma boa ideia?’ por uma pergunta mais concreta: ‘o que o jogador faz a cada poucos segundos e por que gostaria de repetir isso?’",
+          "Se a resposta depende apenas da história, da recompensa futura ou da promessa de que o jogo ficará interessante depois, o núcleo ainda não está pronto. A narrativa pode dar significado à ação, mas não deveria precisar resgatar uma ação que não tem graça."
+        ]
+      },
+      {
+        "heading": "Procure decisões, não apenas comandos",
+        "paragraphs": [
+          "Apertar um botão é um comando. Escolher quando apertar, o que arriscar e qual oportunidade abandonar é uma decisão. O prazer costuma aparecer no espaço entre essas opções: avanço ou me protejo, guardo ou gasto, exploro ou volto em segurança?",
+          "Uma boa mecânica não precisa oferecer dezenas de possibilidades. Duas alternativas legíveis, com consequências diferentes, podem gerar mais envolvimento do que um painel cheio de ações quase iguais."
+        ],
+        "list": [
+          "O jogador entende o efeito da ação sem precisar interromper a partida?",
+          "Existe uma escolha real ou há sempre uma resposta obviamente correta?",
+          "O resultado ensina algo útil para a próxima tentativa?",
+          "O domínio muda a forma de jogar, em vez de apenas aumentar números?"
+        ]
+      },
+      {
+        "heading": "O teste dos trinta segundos",
+        "paragraphs": [
+          "Eu gosto de observar um protótipo em intervalos curtos. Em trinta segundos, já deveria acontecer alguma combinação de intenção, resposta e surpresa. Não significa encher a tela de estímulos; significa permitir que a pessoa formule um pequeno plano e descubra se ele funcionou.",
+          "Depois do teste, a pergunta mais útil não é ‘você gostou?’. Pergunto o que a pessoa tentou fazer, quando mudou de estratégia e em qual momento perdeu a vontade de continuar. As respostas revelam muito mais que uma nota."
+        ]
+      },
+      {
+        "heading": "Falhar também precisa ser gostoso",
+        "paragraphs": [
+          "Fracasso sem compreensão parece arbitrariedade. Fracasso com uma pista clara produz a frase mais valiosa para um protótipo: ‘agora entendi, deixa eu tentar de novo’. Feedback visual, sonoro e de movimento deve explicar a relação entre ação e consequência no instante em que ela acontece.",
+          "É por isso que diversão não é uma camada de acabamento. Ela nasce da conversa entre controle, resposta, ritmo e aprendizado. E essa conversa só aparece quando colocamos o jogo nas mãos de alguém cedo o bastante para ainda podermos mudar de ideia."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "criar-jogos-indie-sem-uma-equipe-gigante",
+    "title": "Criar jogos indie sem uma equipe gigante",
+    "shortTitle": "Criar sem equipe gigante",
+    "description": "Como reduzir escopo sem reduzir personalidade e transformar limitações de uma produção indie em escolhas de design mais fortes.",
+    "eyebrow": "Produção independente",
+    "publishedAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "readingTime": "6 min",
+    "tags": ["games indie", "produção", "escopo"],
+    "lead": "Produção independente não é uma versão menor de uma grande produção. É outro tipo de criatura: mais frágil em recursos, mais rápida para mudar de direção e, quando encontra sua voz, muito mais difícil de confundir com qualquer outra.",
+    "sections": [
+      {
+        "heading": "Escopo é direção criativa",
+        "paragraphs": [
+          "Cortar escopo costuma soar como desistência porque pensamos primeiro no que será removido. Prefiro olhar para o que ficará mais forte. Se uma ideia não ajuda o núcleo do jogo, ela compete por tempo com tudo que realmente o torna especial.",
+          "Um projeto pequeno não precisa parecer vazio. Ele precisa ser concentrado. Poucas mecânicas que conversam entre si, uma identidade visual coerente e um objetivo compreensível criam mais presença do que uma coleção de sistemas inacabados."
+        ]
+      },
+      {
+        "heading": "Construa a menor experiência completa",
+        "paragraphs": [
+          "Antes de pensar em quantidade de fases, personagens ou itens, procuro uma experiência que já tenha começo, tensão e resolução. Pode durar poucos minutos. O importante é que permita avaliar o ritmo inteiro, não apenas uma mecânica isolada em uma sala de testes.",
+          "Essa fatia pequena expõe cedo os custos invisíveis: menus, salvamento, feedback, transições, acessibilidade, som e todos os detalhes que transformam um protótipo em algo que outra pessoa consegue jogar."
+        ],
+        "list": [
+          "Uma ação central que seja agradável antes de receber conteúdo extra.",
+          "Um objetivo que o jogador consiga explicar com as próprias palavras.",
+          "Uma condição de falha que ensine, em vez de apenas interromper.",
+          "Uma conclusão pequena, mas capaz de deixar uma lembrança."
+        ]
+      },
+      {
+        "heading": "Ferramentas devem devolver tempo",
+        "paragraphs": [
+          "Automação é valiosa quando elimina repetição e abre espaço para decisões criativas. Ela deixa de ajudar quando exige uma infraestrutura maior que o problema ou quando produz conteúdo que ninguém consegue revisar com cuidado.",
+          "O mesmo vale para tecnologia. A melhor arquitetura não é a mais impressionante; é aquela que permite testar uma mudança enquanto ainda lembramos por que ela parecia interessante."
+        ]
+      },
+      {
+        "heading": "Personalidade é uma vantagem competitiva",
+        "paragraphs": [
+          "Um estúdio pequeno dificilmente vence uma disputa de volume. Pode, porém, criar algo com voz própria. Humor estranho, escolhas visuais inesperadas, uma regra que ninguém teria aprovado em uma reunião enorme: aquilo que parece arriscado também pode ser o motivo para alguém lembrar do jogo.",
+          "A limitação mais saudável é perguntar o que somente este projeto precisa ser. Quando a resposta fica clara, dizer não deixa de ser perda e passa a ser design."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "personalidade-sem-quebrar-a-navegacao",
+    "title": "Como preservar personalidade sem quebrar a navegação",
+    "shortTitle": "Personalidade e navegação",
+    "description": "O que aprendi ao transformar um desktop mágico em um site mais rápido, acessível e encontrável sem apagar sua identidade.",
+    "eyebrow": "Experiência na web",
+    "publishedAt": "2026-09-12",
+    "updatedAt": "2026-09-12",
+    "readingTime": "5 min",
+    "tags": ["design web", "acessibilidade", "SEO"],
+    "lead": "Meu site pessoal nasceu como um pequeno desktop mágico. O problema é que, em algum momento, a fantasia começou a cobrar um preço alto: janelas pequenas, conteúdo difícil de ler, interações inesperadas e caminhos que só existiam para quem já sabia onde clicar.",
+    "sections": [
+      {
+        "heading": "Quando a metáfora vira obstáculo",
+        "paragraphs": [
+          "Simular um sistema operacional é divertido porque convida à exploração. Mas pessoas não visitam um site com o manual dessa metáfora. Um ícone que precisa de clique duplo, uma janela que não rola e um destino sem endereço próprio podem ser coerentes com a fantasia e ainda assim impedir a descoberta.",
+          "A solução não foi abandonar o desktop. Foi separar aparência e comportamento. O site continua abrindo janelas, enquanto seus destinos importantes também existem como links reais e páginas com endereços próprios."
+        ]
+      },
+      {
+        "heading": "A personalidade mora nas respostas",
+        "paragraphs": [
+          "Identidade não depende de esconder controles conhecidos. Ela aparece na atmosfera, no ritmo, nos nomes, nas ilustrações e na forma como o ambiente reage. Um link pode continuar sendo um link e ainda abrir um portal. Uma pasta pode continuar parecendo mágica e ainda funcionar com teclado, toque e leitor de tela.",
+          "Essa mudança foi importante: parei de tratar usabilidade como a parte burocrática que vem depois da criação. Quando a interface responde bem, a fantasia fica mais convincente porque nada nos expulsa dela."
+        ]
+      },
+      {
+        "heading": "Velocidade também faz parte da narrativa",
+        "paragraphs": [
+          "Um universo não parece encantado enquanto o visitante espera imagens enormes carregarem. Otimizar o fundo, reduzir dependências, carregar telas apenas quando necessárias e impedir trabalho repetido no navegador mudou a sensação do site antes mesmo de qualquer nova animação.",
+          "Performance não é apenas uma pontuação técnica. É o tempo entre a curiosidade e a resposta. Quanto menor esse intervalo, maior a chance de a pessoa abrir outra pasta, ouvir outra música ou conhecer um game."
+        ]
+      },
+      {
+        "heading": "Do cartão de visita para um lugar vivo",
+        "paragraphs": [
+          "Um cartão de visita termina depois que entrega seus links. Um lugar vivo oferece razões para voltar. Este Diário de Bordo é parte dessa mudança: textos com experiências reais, conectados aos projetos que motivaram cada reflexão.",
+          "O objetivo não é alimentar uma máquina de conteúdo. É registrar ideias que eu gostaria de encontrar quando estou criando — e deixar novas portas abertas para quem chegou procurando por uma delas."
+        ]
+      }
+    ]
+  }
+]

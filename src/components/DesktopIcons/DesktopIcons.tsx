@@ -53,7 +53,7 @@ const DesktopIcon = (icon: IconProps) => {
     );
   }
 
-  if (icon.type === "route" && icon.url) {
+  if (icon.url) {
     return (
       <a
         className="icon"
