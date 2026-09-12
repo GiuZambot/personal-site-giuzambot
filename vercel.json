@@ -3,20 +3,14 @@
   "buildCommand": "npm run build",
   "rewrites": [
     {
-      "source": "games/cooking_iframe/(.*)",
-      "destination": "games/cooking_iframe/$1"
-    },
-    {
       "source": "/(.*)",
       "destination": "/"
     }
   ],
   "headers": [
     {
-      "source": "/music",
+      "source": "/music/(.*)",
       "headers": [
-        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
-        { "key": "Cross-Origin-Embedder-Policy", "value": "credentialless (Chrome > 96)" },
         {
           "key": "Content-Security-Policy",
           "value": "frame-src 'self' https://www.youtube.com"
@@ -26,22 +20,6 @@
     {
       "source": "/games/(.*)",
       "headers": [
-        {
-          "key": "Access-Control-Allow-Credentials",
-          "value": "true"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-        },
         {
           "key": "Cross-Origin-Embedder-Policy",
           "value": "require-corp"
@@ -53,6 +31,10 @@
         {
           "key": "Content-Security-Policy",
           "value": "frame-ancestors 'self' https://*.giuzambot.com"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
         }
       ]
     }

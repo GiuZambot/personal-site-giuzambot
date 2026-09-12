@@ -1,0 +1,30 @@
+.not-found {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  gap: 12px;
+  padding: 24px;
+  color: #f7f0e4;
+  background: radial-gradient(circle at top, #343754, #111522 65%);
+  text-align: center;
+}
+
+.not-found-code {
+  color: #ffd88a;
+  font: 800 clamp(4rem, 15vw, 8rem) / 0.8 Georgia, "Times New Roman", serif;
+}
+
+.not-found h1 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.not-found a {
+  justify-self: center;
+  margin-top: 12px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  color: #21170b;
+  background: #ffd88a;
+  font-weight: 800;
+  text-decoration: none;
+}

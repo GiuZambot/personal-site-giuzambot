@@ -1,14 +1,18 @@
-import almatter from "../../assets/alma.png";
-import Capib from "../../assets/capib.png";
-import GameIcon from "../../assets/chapeu.png";
-import Github from "../../assets/github.png";
-import GrimoireIcon from "../../assets/grimorio.png";
-import LinkedIn from "../../assets/likedin.png";
-import GiuIcon from "../../assets/mulher.png";
-import Jep from "../../assets/simbolo.png";
-import Vela from "../../assets/vela.png";
+import almatter from "../../assets/optimized/alma.webp";
+import Capib from "../../assets/optimized/capib.webp";
+import CardEvolution from "../../assets/games/card-evolution.webp";
+import Exodus from "../../assets/games/exodus.webp";
+import ReturnedVesperNetwork from "../../assets/games/returned-vesper-network.webp";
+import SavingCapybaras from "../../assets/games/saving-capybaras.webp";
+import SpaceNomadEchoes from "../../assets/games/space-nomad-echoes.webp";
+import SpaceRunner from "../../assets/games/space-runner.webp";
+import GameIcon from "../../assets/optimized/chapeu.webp";
+import Github from "../../assets/optimized/github.webp";
+import LinkedIn from "../../assets/optimized/likedin.webp";
+import GiuIcon from "../../assets/optimized/mulher.webp";
+import Vela from "../../assets/optimized/vela.webp";
 import Youtube from "../../assets/youtube.svg";
-import { IconProps } from "../../components/DesktopIcons/DesktopIcons";
+import type { IconProps } from "../../components/DesktopIcons/DesktopIcons";
 
 interface IconsMap {
   [key: string]: IconProps[];
@@ -16,237 +20,96 @@ interface IconsMap {
 
 export const myGames: IconProps[] = [
   {
-    id: "game-cooking",
-    name: "Cooking(in develop)",
-    img: Capib,
-    top: 30,
-    left: 20,
-    url: "games/cooking",
+    id: "game-returned-vesper-network",
+    name: "Returned: Vesper Network",
+    img: ReturnedVesperNetwork,
+    url: "https://almatter.com.br/pt-BR/games/returned-vesper-network",
+    type: "external",
+  },
+  {
+    id: "game-exodus",
+    name: "Exodus",
+    img: Exodus,
+    url: "https://almatter.com.br/pt-BR/games/exodus",
+    type: "external",
+  },
+  {
+    id: "game-saving-capybaras",
+    name: "Saving Capybaras",
+    img: SavingCapybaras,
+    url: "https://almatter.com.br/pt-BR/games/saving-capybaras",
+    type: "external",
+  },
+  {
+    id: "game-space-runner",
+    name: "Space Runner",
+    img: SpaceRunner,
+    url: "https://almatter.com.br/pt-BR/games/space-runner",
+    type: "external",
+  },
+  {
+    id: "game-space-nomad-echoes",
+    name: "Space Nomad Echoes",
+    img: SpaceNomadEchoes,
+    url: "https://almatter.com.br/pt-BR/games/space-nomad-echoes",
+    type: "external",
+  },
+  {
+    id: "game-card-evolution",
+    name: "Card Evolution",
+    img: CardEvolution,
+    url: "https://almatter.com.br/pt-BR/games/card-evolution",
+    type: "external",
   },
   {
     id: "profile-game",
-    name: "Island Alone (old site home)",
+    name: "Island Alone — clássico",
     img: Capib,
-    top: 130,
-    left: 20,
     url: "/games/island",
+    type: "external",
   },
 ];
 
-export const grimoireIcons: IconProps[] = [
-  {
-    id: "Jep",
-    name: "JEP",
-    img: Jep,
-    top: 30,
-    left: 20,
-    url: "https://jep.vercel.app/",
-  },
-];
+const musicVideos = [
+  ["ZW3dYkdJyY0", "Ainda é hoje"],
+  ["LnJ1Q0Zzc1o", "Ode to Myself"],
+  ["KsmwH3lm8Io", "Manifest in Motion"],
+  ["2n-rhIH5pEo", "Branches of the Immortal Tree"],
+  ["rkYC6a7p9rg", "Your Shadow, My Light"],
+  ["tmnX10F8lPo", "Break the Pattern"],
+  ["Q1GrtFi-QPo", "Sunshine Jump"],
+  ["5vd9CNyZD-M", "Awaken the Dreamer"],
+  ["SgDvlWynW3I", "Ghost in the Code"],
+  ["y4NR2cm0mOg", "Side by Side"],
+  ["Gm115Jdd0D8", "Rise and Conquer"],
+  ["q7fVuCqZFeg", "Melhor Amiga"],
+  ["whDS8XM8N4Y", "Becoming the Destroyer"],
+  ["qrb5qi4Gqpc", "Echoes of Freedom"],
+  ["8_2_3zIMBbU", "The Treasure"],
+  ["4Duax63ZuZQ", "Eternal"],
+  ["tQeBrOqEF-c", "Embrace the Tide"],
+  ["zjWCih6ucfA", "I Feel Good"],
+  ["aHVHXshuEw0", "Not Me Anymore 3"],
+  ["LRnBs2us548", "Not Me Anymore 2"],
+  ["9boAh2l7a9o", "Not Me Anymore 1"],
+  ["oIopgGnM1LM", "Hope's Horizon"],
+  ["uh4rzTqsqfw", "Acceptance Blooms"],
+  ["fb_YBcE-OLU", "Dancing to the End"],
+  ["rtyAvbZYG4U", "Ephemeral Waltz"],
+  ["2J1DCHrxr38", "In Case of Love"],
+  ["ZRD4XSwTY98", "Let Go Their Whispers"],
+  ["jk_JipWv9tw", "Endless Ocean of Life"],
+] as const;
 
-let musicId = 1;
-export const myMusics: IconProps[] = [
-  {
-    id: `music-${musicId++}`,
-    name: "Branches of the Immortal Tree",
+export const myMusics: IconProps[] = musicVideos.map(
+  ([videoId, name], index) => ({
+    id: `music-${index + 1}`,
+    name,
     img: Youtube,
-    top: 20,
-    left: 20,
-    url: "music/2n-rhIH5pEo",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Your Shadow, My Light",
-    img: Youtube,
-    top: 120,
-    left: 20,
-    url: "music/rkYC6a7p9rg",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Break the Pattern - Silesia",
-    img: Youtube,
-    top: 220,
-    left: 20,
-    url: "music/tmnX10F8lPo",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Sunshine Jump",
-    img: Youtube,
-    top: 20,
-    left: 120,
-    url: "music/Q1GrtFi-QPo",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Awaken the Dreamer",
-    img: Youtube,
-    top: 120,
-    left: 120,
-    url: "music/5vd9CNyZD-M",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Ghost in the code",
-    img: Youtube,
-    top: 220,
-    left: 120,
-    url: "music/SgDvlWynW3I",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Side by side",
-    img: Youtube,
-    top: 20,
-    left: 220,
-    url: "music/y4NR2cm0mOg",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Rise and Conquer",
-    img: Youtube,
-    top: 120,
-    left: 220,
-    url: "music/Gm115Jdd0D8",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Melhor amiga",
-    img: Youtube,
-    top: 220,
-    left: 220,
-    url: "music/q7fVuCqZFeg",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Becoming the destroyer",
-    img: Youtube,
-    top: 20,
-    left: 320,
-    url: "music/whDS8XM8N4Y",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Echoes of Freedom",
-    img: Youtube,
-    top: 120,
-    left: 320,
-    url: "music/qrb5qi4Gqpc",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "The treasure",
-    img: Youtube,
-    top: 220,
-    left: 320,
-    url: "music/8_2_3zIMBbU",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Eternal",
-    img: Youtube,
-    top: 20,
-    left: 420,
-    url: "music/4Duax63ZuZQ",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Embrace the tide",
-    img: Youtube,
-    top: 120,
-    left: 420,
-    url: "music/tQeBrOqEF-c",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "I Feel Good",
-    img: Youtube,
-    top: 220,
-    left: 420,
-    url: "music/zjWCih6ucfA",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Not Me Anymore",
-    img: Youtube,
-    top: 20,
-    left: 20,
-    url: "music/LRnBs2us548",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Hope's Horizon",
-    img: Youtube,
-    top: 120,
-    left: 20,
-    url: "music/oIopgGnM1LM",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Acceptance Blooms",
-    img: Youtube,
-    top: 220,
-    left: 20,
-    url: "music/uh4rzTqsqfw",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Dancing to the end",
-    img: Youtube,
-    top: 20,
-    left: 120,
-    url: "music/fb_YBcE-OLU",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Ephemeral Waltz",
-    img: Youtube,
-    top: 120,
-    left: 120,
-    url: "music/rtyAvbZYG4U",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "In Case of Love",
-    img: Youtube,
-    top: 220,
-    left: 120,
-    url: "music/2J1DCHrxr38",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Let Go Their Whispers",
-    img: Youtube,
-    top: 20,
-    left: 220,
-    url: "music/ZRD4XSwTY98",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Endless Ocean of Life",
-    img: Youtube,
-    top: 120,
-    left: 220,
-    url: "music/jk_JipWv9tw",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Wounded Sky",
-    img: Youtube,
-    top: 220,
-    left: 220,
-    url: "music/HIDDEN_VIDEO_ID_1",
-  },
-  {
-    id: `music-${musicId++}`,
-    name: "Aether's Calling",
-    img: Youtube,
-    top: 20,
-    left: 320,
-    url: "music/HIDDEN_VIDEO_ID_2",
-  },
-];
+    url: `/music/${videoId}`,
+    type: "route",
+  }),
+);
 
 export const defaultIcons: IconProps[] = [
   {
@@ -254,12 +117,14 @@ export const defaultIcons: IconProps[] = [
     name: "Biografia",
     img: GiuIcon,
     url: "/bio",
+    type: "route",
   },
   {
     id: "almatter",
     name: "Almatter",
     img: almatter,
-    url: "https://almatter.vercel.app/",
+    type: "external",
+    url: "https://almatter.com.br/pt-BR/games",
   },
   {
     id: "LinkedIn",
@@ -289,18 +154,10 @@ export const defaultIcons: IconProps[] = [
     type: "external",
     url: "https://github.com/giuzambot",
   },
-  {
-    id: "Grimorio",
-    name: "Grimório",
-    img: GrimoireIcon,
-    type: "folder",
-    content: "grimoireIcons",
-  },
 ];
 
 export const iconsMap: IconsMap = {
   myGames,
   myMusics,
   defaultIcons,
-  grimoireIcons,
 };

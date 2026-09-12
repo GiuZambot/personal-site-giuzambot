@@ -17,40 +17,6 @@ const Bibi = () => {
   const listeningRef = useRef<boolean>(false);
   const mouthRef = useRef<HTMLImageElement | null>(null);
   // const inputRef = useRef<HTMLInputElement | null>(null);
-  const animationIntervalRef = useRef<NodeJS.Timeout | null>(null);
-
-  const initializeSpeechRecognition = () => {
-    const SpeechRecognitionClass =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SpeechRecognitionClass) {
-      console.error("Speech Recognition API not supported in this browser.");
-      return;
-    }
-    const recognitionInstance = new SpeechRecognitionClass();
-    recognitionInstance.lang = "pt-BR";
-
-    recognitionInstance.onresult = async (event: SpeechRecognitionEvent) => {
-      const speechToText = event.results[0][0].transcript;
-      //const response = await sendToAPI(speechToText);
-      //addResponse(response);
-      //textToSpeech(response);
-      textToSpeech(
-        "Desculpe, ainda estou aprendendo a falar, mas você disse: " +
-          speechToText
-      );
-    };
-
-    recognitionInstance.onerror = (event: SpeechRecognitionErrorEvent) => {
-      console.error("Speech recognition error", event.error);
-      listeningRef.current = false;
-    };
-
-    recognitionInstance.onend = () => {
-      listeningRef.current = false;
-    };
-
-    setRecognition(recognitionInstance);
-  };
 
   useEffect(() => {
     const loadVoices = () => {
@@ -59,36 +25,46 @@ const Bibi = () => {
 
     loadVoices();
 
-    window.speechSynthesis.onvoiceschanged = function () {
-      loadVoices();
-    };
-    initializeSpeechRecognition();
-  }, []);
+    window.speechSynthesis.addEventListener("voiceschanged", loadVoices);
 
-  const getRandomDuration = (): string => {
-    const minDuration = 0.3;
-    const maxDuration = 1.5;
-    return Math.random() * (maxDuration - minDuration) + minDuration + "s";
-  };
-
-  const startRandomAnimation = () => {
-    if (animationIntervalRef.current)
-      clearInterval(animationIntervalRef.current);
-    animationIntervalRef.current = setInterval(() => {
-      const newDuration = getRandomDuration();
-      if (mouthRef.current) {
-        mouthRef.current.style.animationDuration = newDuration;
-      }
-    }, 200);
-  };
-
-  const stopRandomAnimation = () => {
-    if (animationIntervalRef.current)
-      clearInterval(animationIntervalRef.current);
-    if (mouthRef.current) {
-      mouthRef.current.style.animationDuration = "";
+    const SpeechRecognitionClass =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognitionClass) {
+      console.error("Speech Recognition API not supported in this browser.");
+      return () => {
+        window.speechSynthesis.removeEventListener("voiceschanged", loadVoices);
+      };
     }
-  };
+
+    const recognitionInstance = new SpeechRecognitionClass();
+    recognitionInstance.lang = "pt-BR";
+    recognitionInstance.onresult = (event: SpeechRecognitionEvent) => {
+      const speechToText = event.results[0][0].transcript;
+      const utterance = new SpeechSynthesisUtterance(
+        `Desculpe, ainda estou aprendendo a falar, mas você disse: ${speechToText}`
+      );
+      utterance.lang = "pt-BR";
+      utterance.voice = voices[1] ?? null;
+      utterance.pitch = 2;
+      utterance.onstart = () => mouthRef.current?.classList.add("talking");
+      utterance.onend = () => mouthRef.current?.classList.remove("talking");
+      window.speechSynthesis.speak(utterance);
+    };
+    recognitionInstance.onerror = (event: SpeechRecognitionErrorEvent) => {
+      console.error("Speech recognition error", event.error);
+      listeningRef.current = false;
+    };
+    recognitionInstance.onend = () => {
+      listeningRef.current = false;
+    };
+    setRecognition(recognitionInstance);
+
+    return () => {
+      window.speechSynthesis.removeEventListener("voiceschanged", loadVoices);
+      recognitionInstance.abort();
+      window.speechSynthesis.cancel();
+    };
+  }, []);
 
   // const addResponse = (text: string) => {
   //   setResponses((prevResponses) => [...prevResponses, text]);
@@ -116,26 +92,6 @@ const Bibi = () => {
   //     sendToAPI(message).then(addResponse);
   //   }
   // };
-
-  const textToSpeech = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "pt-BR";
-    utterance.voice = voices[1];
-    utterance.pitch = 2;
-    utterance.onstart = () => {
-      if (mouthRef.current) {
-        mouthRef.current.classList.add("talking");
-      }
-      startRandomAnimation();
-    };
-    utterance.onend = () => {
-      if (mouthRef.current) {
-        mouthRef.current.classList.remove("talking");
-      }
-      stopRandomAnimation();
-    };
-    speechSynthesis.speak(utterance);
-  };
 
   return (
     <div id="capybara-widget" className="widget">

@@ -7,11 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 .git
 lerna-debug.log*
-public
 node_modules
 dist
 dist-ssr
 *.local
+.playwright-cli/
+output/
 
 # Editor directories and files
 .vscode/*

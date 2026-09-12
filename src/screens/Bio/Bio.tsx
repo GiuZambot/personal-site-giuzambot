@@ -1,7 +1,25 @@
 import { useEffect, useRef } from "react";
-import Spaceship from "../../assets/dudaegiu.png";
-import Avatar from "../../assets/ggiu.png";
+import Spaceship from "../../assets/optimized/dudaegiu.webp";
+import Avatar from "../../assets/optimized/ggiu.webp";
 import "./Bio.css";
+
+interface Star {
+  x: number;
+  y: number;
+  radius: number;
+  alpha: number;
+  delta: number;
+}
+
+interface PropulsionParticle {
+  x: number;
+  y: number;
+  size: number;
+  color: string;
+  speedX: number;
+  speedY: number;
+  alpha: number;
+}
 
 export default function Bio() {
   const starsCanvasRef = useRef<HTMLCanvasElement>(null);
@@ -15,7 +33,7 @@ export default function Bio() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let stars: any[] = [];
+    let stars: Star[] = [];
     let w: number, h: number;
 
     function initCanvas() {
@@ -40,7 +58,7 @@ export default function Bio() {
       if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, w, h);
 
-      for (let star of stars) {
+      for (const star of stars) {
         star.alpha += star.delta;
         if (star.alpha <= 0 || star.alpha >= 1) {
           star.delta = -star.delta;
@@ -81,7 +99,7 @@ export default function Bio() {
     canvas.width = 300;
     canvas.height = 300;
 
-    let particles: any[] = [];
+    const particles: PropulsionParticle[] = [];
 
     function createParticle(x: number, y: number) {
       const size = Math.random() * 2 + 3;
@@ -157,9 +175,17 @@ export default function Bio() {
         alt="Spaceship"
         className="spaceship-img"
         ref={spaceshipRef}
+        width="400"
+        height="400"
       />
       <div className="bio-inner">
-        <img src={Avatar} alt="Avatar" className="bio-avatar" />
+        <img
+          src={Avatar}
+          alt="Giu Zambot"
+          className="bio-avatar"
+          width="400"
+          height="400"
+        />
         <h1 className="section-title">
           Registro Estelar 2.295 – Explorando novas fronteiras.
         </h1>

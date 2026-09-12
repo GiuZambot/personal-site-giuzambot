@@ -1,81 +1,81 @@
-import { Layout } from "antd";
 import { useEffect, useRef } from "react";
-import Battery from "../../assets/battery.svg";
-import Chevron from "../../assets/chevron-up.svg";
-import wallpaper from "../../assets/fundo.png";
+import wallpaper from "../../assets/optimized/fundo.webp";
 import Logo from "../../assets/logo.svg";
-import Notification from "../../assets/notification.svg";
-import Search from "../../assets/search.svg";
-import Sound from "../../assets/sound-max.svg";
 import Bat from "../../components/Bat/Bat";
-import Bibi from "../../components/Bibi/Bibi";
 import DesktopIcon from "../../components/DesktopIcons/DesktopIcons";
-import ParticlesComponent from "../../components/Particles/Particles";
 import Witch from "../../components/Witch/Witch";
 import "./Home.css";
 import { defaultIcons } from "./Icons";
 import { updateClock } from "./methods";
 
 export default function Home() {
-  const clock = useRef<HTMLDivElement>(null);
+  const clock = useRef<HTMLTimeElement>(null);
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: number | undefined;
     if (clock.current !== null) {
-      timer = setInterval(() => updateClock(clock.current!), 1000);
+      updateClock(clock.current);
+      timer = window.setInterval(() => {
+        if (clock.current) updateClock(clock.current);
+      }, 1000);
     }
 
     return () => {
-      clearInterval(timer);
+      if (timer !== undefined) window.clearInterval(timer);
     };
   }, []);
 
   return (
-    <Layout.Content>
-      <div
-        className="windows"
-        style={{
-          background: `url(${wallpaper}) no-repeat center center`,
-          backgroundSize: "cover",
-        }}
-      >
+    <main className="windows">
+      <a className="skip-link" href="#desktop-navigation">
+        Ir para a navegação
+      </a>
+      <img
+        className="desktop-wallpaper"
+        src={wallpaper}
+        alt=""
+        width="1536"
+        height="1024"
+      />
         <Witch />
         <Bat />
         <div id="desktop">
-          {defaultIcons.map((icon, i) => (
-            <DesktopIcon key={icon.id} top={i * 100 + 20} {...icon} />
-          ))}
-          <Bibi />
+          <nav
+            id="desktop-navigation"
+            className="desktop-navigation"
+            aria-label="Explorar o universo de Giu Zambot"
+          >
+            {defaultIcons.map((icon, index) => (
+              <DesktopIcon key={icon.id} top={index * 100 + 20} {...icon} />
+            ))}
+          </nav>
+          <section className="discovery-panel" aria-labelledby="site-title">
+            <p className="discovery-eyebrow">Criatividade que vira mundo</p>
+            <h1 id="site-title">Giu Zambot</h1>
+            <p>
+              Desenvolvedora e criadora de experiências. Explore meus projetos
+              ou conheça os games do estúdio Almatter.
+            </p>
+            <a
+              className="discovery-cta"
+              href="https://almatter.com.br/pt-BR/games"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Jogar games da Almatter
+            </a>
+          </section>
         </div>
         <div id="taskbar">
           <div className="taskbar-left">
-            <div id="start-button">
-              <img src={Logo} alt="start-button" id="start-button-img" />
-            </div>
-            <div id="search-bar">
-              <img src={Search} alt="search-icon" id="search-icon" />
-              <input type="text" placeholder="Pesquisar" id="search-input" />
-            </div>
+            <a id="start-button" href="/" aria-label="Página inicial de Giu Zambot">
+              <img src={Logo} alt="" id="start-button-img" />
+              <span>Giu Zambot</span>
+            </a>
             <div id="open-windows"></div>
           </div>
-          <div id="taskbar-icons">
-            <div id="chevron-icon" className="taskbar-icon">
-              <img src={Chevron} alt="chevron" />
-            </div>
-            <div id="battery-icon" className="taskbar-icon">
-              <img src={Battery} alt="Battery" />
-            </div>
-            <div id="volume-icon" className="taskbar-icon">
-              <img src={Sound} alt="Volume" />
-            </div>
-            <div id="clock" ref={clock}></div>
-            <div id="notification-icon" className="taskbar-icon">
-              <img src={Notification} alt="Notifications" />
-            </div>
-          </div>
+          <time id="clock" ref={clock} aria-label="Hora local"></time>
         </div>
-      </div>
-      <ParticlesComponent />
-    </Layout.Content>
+    </main>
   );
 }
