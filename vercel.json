@@ -53,7 +53,7 @@
       ]
     },
     {
-      "source": "/games/cozinhando/:path*",
+      "source": "/games/cozinhando(.*)",
       "headers": [
         {
           "key": "Cache-Control",
