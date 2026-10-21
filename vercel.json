@@ -5,6 +5,14 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
+      "source": "/games/cozinhando",
+      "destination": "/games/cozinhando/index"
+    },
+    {
+      "source": "/games/cozinhando/",
+      "destination": "/games/cozinhando/index"
+    },
+    {
       "source": "/artigos/:slug",
       "destination": "/artigo-:slug"
     },
@@ -41,6 +49,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/games/cozinhando/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
