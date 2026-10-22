@@ -1,0 +1,11 @@
+{
+  "version": "0.2.3",
+  "executable": "cozinhando_0_2_3.exe",
+  "archive": "cozinhando_0_2_3_windows.zip",
+  "bytes": 59530070,
+  "sha256": "5CAE21C97C135190046737125616574B055B8FB15BD725FA664227CD69F82B93",
+  "game_commit": "00607e368d3113bdf6d0b3fa1622cd1daff179e5",
+  "source_dirty": false,
+  "platform": "Windows x86_64",
+  "build": "release"
+}
